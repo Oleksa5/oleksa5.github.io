@@ -1,0 +1,2130 @@
+/*———————————————————— REGION Import ————————————————————*/
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;500;550&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Bree+Serif:wght@400&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@300;400;500&display=swap');
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:wght@400;500&display=swap');
+
+/*—————————————————— ENDREGION Import ———————————————————*/
+
+
+
+/*——————————————— REGION Notes ———————————————*/
+
+  /* NOTE Abbreviations
+     c - color
+     bc - background-color
+     fc - foreground-color
+     lfc - light foreground color
+     nfc - neutral foreground color
+     bd - border
+     lbd - left-border
+     tbd - top-border
+     r - radius
+     sh - box-shadow
+     p - paragraph
+     jc - justify-content
+
+     l-k - perceived hue brightness factor
+   */
+
+  /* NOTE
+     Use outline to change focus border width
+     without affecting layout:
+     `--input-text-o: var(--outline);`
+   */
+
+  /* NOTE
+     Combine outer and inner shadows:
+     ```
+     --input-text-sh-focus:
+       inset 0 0 0.25rem var(--shadow-focus-c),
+       0 0 0.25rem var(--shadow-focus-c);
+     ```
+   */
+
+/*——————————————— ENDREGION Notes ———————————————*/
+
+
+
+/*—————————— REGION Variables/Color ———————————*/
+
+  :root {
+    --unspecified-c:      hsl(300, 100%, 50%);
+    --unused-h:           30; /* TODO(bp+c): 300 */
+    --unused-c:           hsl(300, 100%, 50%);
+  }
+    
+/*————————— ENDREGION Variables/Color —————————*/
+
+
+
+/*——— REGION Variables/ColorThemes/Standard ————*/
+
+    /*——— SECTION Secondary ———*/
+    
+  :root,
+  :root.theme-secondary-scheme-standard {
+    --secondary-s:          var(--surface-variant-s);
+    --secondary-c-low-3:    hsl(var(--secondary-h), var(--secondary-s), 70%);
+    --secondary-c-low-2:    hsl(var(--secondary-h), var(--secondary-s), 70%);
+    --secondary-c-low-1:    hsl(var(--secondary-h), var(--secondary-s), 90%);
+    --secondary-c-low-0-2:  hsl(var(--secondary-h), var(--secondary-s), 94%); 
+    --secondary-c-low-0-1:  hsl(var(--secondary-h), var(--secondary-s), 96%);
+    --secondary-c:          hsl(var(--secondary-h), var(--secondary-s), 98%);
+    --secondary-c-high-1:   hsl(var(--secondary-h), var(--secondary-s), 100%);
+    --secondary-c-high-2:   hsl(var(--secondary-h), var(--secondary-s), 100%);
+    --secondary-fc-low-2:   hsl(var(--secondary-h), var(--secondary-s), 30%);
+    --secondary-fc-low:     hsl(var(--secondary-h), var(--secondary-s), 30%);
+    --secondary-fc-low-0-1: hsl(var(--secondary-h), var(--secondary-s), 30%);
+    --secondary-fc:         hsl(var(--secondary-h), var(--secondary-s), 30%);
+
+    --border-focus-c:       var(--primary-c);
+    --shadow-focus-c:       var(--primary-fc);
+    
+    --item-c-hover:         var(--secondary-c-low-0-2);
+  }
+  .theme-secondary-scheme-standard.increased-surface-levels-distance {
+    --secondary-c-low-3:    hsl(var(--secondary-h), var(--secondary-s), 70%);
+    --secondary-c-low-2:    hsl(var(--secondary-h), var(--secondary-s), 70%);
+    --secondary-c-low-1:    hsl(var(--secondary-h), var(--secondary-s), 86%);
+    --secondary-c-low-0-2:  hsl(var(--secondary-h), var(--secondary-s), 90%); 
+    --secondary-c-low-0-1:  hsl(var(--secondary-h), var(--secondary-s), 92%);
+    --secondary-c:          hsl(var(--secondary-h), var(--secondary-s), 96%);
+  }
+  .dark-mode,
+  .theme-secondary-scheme-standard.dark-mode {
+    --secondary-c-low-3:    hsl(var(--secondary-h), var(--secondary-s), 10%);
+    --secondary-c-low-2:    hsl(var(--secondary-h), var(--secondary-s), 10%);
+    --secondary-c-low-1:    hsl(var(--secondary-h), var(--secondary-s), 15%);
+    --secondary-c-low-0-2:  hsl(var(--secondary-h), var(--secondary-s), 15%); 
+    --secondary-c-low-0-1:  hsl(var(--secondary-h), var(--secondary-s), 17%);
+    --secondary-c:          hsl(var(--secondary-h), var(--secondary-s), 20%);
+    --secondary-c-high-1:   hsl(var(--secondary-h), var(--secondary-s), 30%);
+    --secondary-c-high-2:   hsl(var(--secondary-h), var(--secondary-s), 35%);
+    --secondary-fc-low-2:   hsl(var(--secondary-h), var(--secondary-s), 75%);
+    --secondary-fc-low:     hsl(var(--secondary-h), var(--secondary-s), 75%);
+    --secondary-fc-low-0-1: hsl(var(--secondary-h), var(--secondary-s), 80%);
+    --secondary-fc:         hsl(var(--secondary-h), var(--secondary-s), 80%);
+
+    --shadow-focus-c:       hsl(var(--primary-h), 50%, 35%);
+
+    --item-c-hover:         var(--secondary-c-high-1);
+  }
+
+  .theme-secondary-scheme-standard-2 {
+    --secondary-s:          60%;
+    --secondary-c-low-3:    hsl(var(--secondary-h), var(--secondary-s), 50%);
+    --secondary-c-low-2:    hsl(var(--secondary-h), var(--secondary-s), 55%);
+    --secondary-c-low-1:    hsl(var(--secondary-h), var(--secondary-s), 60%);
+    --secondary-c-low-0-2:  hsl(var(--secondary-h), var(--secondary-s), 61%); 
+    --secondary-c-low-0-1:  hsl(var(--secondary-h), var(--secondary-s), 96%);
+    --secondary-c:          hsl(var(--secondary-h), var(--secondary-s), 98%);
+    --secondary-c-high-1:   hsl(var(--secondary-h), 80%, 70%);
+    --secondary-c-high-2:   hsl(var(--secondary-h), 80%, 75%);
+    --secondary-fc-low-2:   hsl(var(--secondary-h), 100%, 60%);
+    --secondary-fc-low:     hsl(var(--secondary-h), 100%, 65%);
+    --secondary-fc-low-0-1: hsl(var(--secondary-h), 100%, 70%);
+    --secondary-fc:         hsl(var(--secondary-h), 100%, 75%);
+  }
+  .theme-secondary-scheme-standard-2.dark-mode {
+    --secondary-s:          var(--surface-variant-s);
+    --secondary-c-low-3:    hsl(var(--secondary-h), var(--secondary-s), 10%);
+    --secondary-c-low-2:    hsl(var(--secondary-h), var(--secondary-s), 10%);
+    --secondary-c-low-1:    hsl(var(--secondary-h), var(--secondary-s), 15%);
+    --secondary-c-low-0-2:  hsl(var(--secondary-h), var(--secondary-s), 15%); 
+    --secondary-c-low-0-1:  hsl(var(--secondary-h), var(--secondary-s), 17%);
+    --secondary-c:          hsl(var(--secondary-h), var(--secondary-s), 20%);
+    --secondary-c-high-1:   hsl(var(--secondary-h), var(--secondary-s), 30%);
+    --secondary-c-high-2:   hsl(var(--secondary-h), var(--secondary-s), 35%);
+    --secondary-fc-low-2:   hsl(var(--secondary-h), 100%, 60%);
+    --secondary-fc-low:     hsl(var(--secondary-h), 100%, 65%);
+    --secondary-fc-low-0-1: hsl(var(--secondary-h), 100%, 70%);
+    --secondary-fc:         hsl(var(--secondary-h), 100%, 75%);
+  }
+
+    /*——— SECTION SurfaceVariant ———*/
+
+  :root,
+  .theme-surface-variant-scheme-standard {
+    --surface-variant-h:            30;
+    --surface-variant-s:            0%;
+
+    --surface-variant-c-low-2:      hsl(var(--surface-variant-h), var(--surface-variant-s), 80%);
+    --surface-variant-c-low:        hsl(var(--surface-variant-h), var(--surface-variant-s), 90%);
+    --surface-variant-c:            hsl(var(--surface-variant-h), var(--surface-variant-s), 99%);
+    --surface-variant-c-high:       hsl(var(--surface-variant-h), var(--surface-variant-s), 100%);
+    --surface-variant-c-high-2:     hsl(var(--surface-variant-h), var(--surface-variant-s), 100%);
+    --surface-variant-c-high-3:     hsl(var(--surface-variant-h), var(--surface-variant-s), 100%);
+    --surface-variant-text-c-low:   hsl(var(--surface-variant-h), var(--surface-variant-s), 15%);
+    --surface-variant-text-c:       hsl(var(--surface-variant-h), var(--surface-variant-s), 20%);
+    --surface-variant-text-c-subtle: hsl(var(--surface-variant-h), var(--surface-variant-s), 30%);
+    --surface-variant-fc:           hsl(var(--surface-variant-h), var(--surface-variant-s), 30%);
+    --surface-variant-fc-saturated: hsl(var(--surface-variant-h), var(--surface-variant-s), 5%);
+    --surface-variant-fc-high:      hsl(var(--surface-variant-h), var(--surface-variant-s), 30%);
+    --surface-variant-fc-soft-desaturated: hsl(var(--surface-variant-h), var(--surface-variant-s), 75%);
+    --surface-variant-fc-auxiliary: var(--surface-variant-fc-soft-desaturated);
+  }
+  .dark-mode,
+  .theme-surface-variant-scheme-standard.dark-mode {
+    --surface-variant-c-low-2:      var(--unused-c);
+ /* --surface-variant-c-low:        hsl(var(--surface-variant-h), var(--surface-variant-s), 12%); */
+    --surface-variant-c-low:        var(--unused-c);
+    --surface-variant-c:            hsl(var(--surface-variant-h), var(--surface-variant-s), 20%);
+    --surface-variant-c-high:       hsl(var(--surface-variant-h), var(--surface-variant-s), 25%);
+    --surface-variant-c-high-2:     hsl(var(--surface-variant-h), var(--surface-variant-s), 30%);
+    --surface-variant-c-high-3:     hsl(var(--surface-variant-h), var(--surface-variant-s), 35%);
+    --surface-variant-text-c-low:   hsl(var(--surface-variant-h), var(--surface-variant-s), 85%);
+    --surface-variant-text-c:       hsl(var(--surface-variant-h), var(--surface-variant-s), 90%);
+    --surface-variant-text-c-subtle: hsl(var(--surface-variant-h), var(--surface-variant-s), 80%);
+    --surface-variant-fc:           hsl(var(--surface-variant-h), var(--surface-variant-s), 80%);
+    --surface-variant-fc-saturated: hsl(var(--surface-variant-h), var(--surface-variant-s), 97%);
+    --surface-variant-fc-high:      hsl(var(--surface-variant-h), var(--surface-variant-s), 85%);
+    --surface-variant-fc-soft-desaturated: hsl(var(--surface-variant-h), var(--surface-variant-s), 50%);
+  }
+
+    /*——— SECTION Surface ———*/
+
+  :root,
+  .theme-surface-scheme-standard {
+    --surface-h:          30;
+    --surface-s:          0%;
+
+    --surface-text-c-on-light: hsl(var(--surface-h), var(--surface-s), 20%);
+    --surface-text-c-on-dark:  hsl(var(--surface-h), var(--surface-s), 90%);
+    
+    --surface-c-low-3:    hsl(var(--surface-h), var(--surface-s), 60%);
+    --surface-c-low-2:    hsl(var(--surface-h), var(--surface-s), 80%);
+    --surface-c-low:      hsl(var(--surface-h), var(--surface-s), 87%);
+    --surface-c:          hsl(var(--surface-h), var(--surface-s), 94%);
+    --surface-c-high:     hsl(var(--surface-h), var(--surface-s), 100%);
+    --surface-c-high-2:   hsl(var(--surface-h), var(--surface-s), 100%);
+    --surface-c-high-3:   hsl(var(--surface-h), var(--surface-s), 100%);
+    --surface-text-c-low: hsl(var(--surface-h), var(--surface-s), 15%);
+    --surface-text-c:     var(--surface-text-c-on-light);
+  }
+  .higher-contrast {
+    --surface-c:          hsl(var(--surface-h), var(--surface-s), 84%);
+  }
+  .dark-mode,
+  .theme-surface-scheme-standard.dark-mode {
+    --surface-c-low-2:    hsl(var(--surface-h), var(--surface-s), 12%);
+    --surface-c-low:      hsl(var(--surface-h), var(--surface-s), 16%);
+    --surface-c:          hsl(var(--surface-h), var(--surface-s), 20%);
+    --surface-c-high:     hsl(var(--surface-h), var(--surface-s), 25%);
+    --surface-c-high-2:   hsl(var(--surface-h), var(--surface-s), 30%);
+    --surface-c-high-3:   hsl(var(--surface-h), var(--surface-s), 35%);
+    --surface-text-c-low: hsl(var(--surface-h), var(--surface-s), 85%);
+    --surface-text-c:     hsl(var(--surface-h), var(--surface-s), 90%);
+  }
+
+/*——— ENDREGION Variables/ColorThemes/Standard ————*/
+
+
+
+/*——— REGION Variables/ColorThemes/Colored/Primary ————*/
+
+    /*——— SECTION Hue ———*/
+
+  :root,
+  .green-yellow-theme {
+    --primary-h: 90;
+  }
+  .orange-theme {
+    --primary-h: 30;
+  }
+  .yellow-green-theme {
+    --primary-h: 75;
+  }
+  .blue-theme {
+    --primary-h: 210;
+  }
+
+    /*——— SECTION Saturation ———*/
+
+  :root,
+  .theme-primary-scheme-saturated {
+    --primary-s:        60%;
+    --primary-s-active: 70%;
+  }
+  .theme-primary-scheme-saturated-3-4 {
+    --primary-s:        80%;
+    --primary-s-active: 90%;
+  }
+  .theme-primary-scheme-fully-saturated {
+    --primary-s:        100%;
+    --primary-s-active: 100%;
+  }
+
+    /*——— SECTION Schemes ———*/
+
+  :root,
+  .theme-primary-scheme-saturated,
+  .theme-primary-scheme-saturated-3-4,
+  .theme-primary-scheme-fully-saturated {
+    --primary-c-low:  hsl(var(--primary-h), var(--primary-s), 40%);
+    --primary-c:      hsl(var(--primary-h), var(--primary-s), 50%);
+    --primary-c-high: hsl(var(--primary-h), var(--primary-s), 70%);
+    --primary-c-active: hsl(var(--primary-h), var(--primary-s-active), 55%);
+    --primary-c-active-high: hsl(var(--primary-h), var(--primary-s-active), 60%);
+    --primary-fc:     hsl(var(--primary-h), 100%, 75%);
+
+    --primary-text-c: hsl(var(--unused-h), 0%, 100%);
+  }
+
+/*—— ENDREGION Variables/ColorThemes/Colored/Primary ——*/
+
+
+/*——— REGION Variables/ColorThemes/Colored/Secondary ————*/
+
+    /*——— SECTION Hue ———*/
+  
+  .green-secondary-theme {
+    --secondary-h: 75;
+  }
+  .blue-secondary-theme {
+    --secondary-h: 210;
+  }
+  .blue-violet-secondary-theme {
+    --secondary-h: 250;
+  }
+  .violet-secondary-theme {
+    --secondary-h: 270;
+  }
+  .magenta-secondary-theme {
+    --secondary-h: 300;
+  }
+
+    /*——— SECTION Saturation ———*/
+
+  :root {
+    --secondary-s-strong:   95%;
+  }
+
+    /*——— SECTION Lightness ———*/
+
+  :root {
+    --secondary-l-k:      1;
+  }
+
+    /*——— SECTION Text ———*/
+
+  :root {
+    --secondary-text-c-on-light: var(--surface-text-c-on-light);
+    --secondary-text-c-on-dark:  var(--surface-text-c-on-dark);
+
+    --secondary-text-c:          var(--surface-text-c);
+  }
+
+    /*——— SECTION Schemes/Shaded ———*/
+
+  .theme-secondary-scheme-shaded,
+  .theme-secondary-scheme-saturated-shaded {
+    --secondary-c-low-3:    hsl(var(--secondary-h), 35%, 75%);
+    --secondary-c-low-2:    hsl(var(--secondary-h), 35%, 80%); /* hsl(var(--secondary-h), 55%, 80%); */
+    --secondary-c-low-1:    hsl(var(--secondary-h), 50%, 90%);
+    --secondary-c-low-0-2:  hsl(var(--secondary-h), 50%, 93%);
+    --secondary-c-low-0-1:  hsl(var(--secondary-h), 55%, 95%);
+    --secondary-c:          hsl(var(--secondary-h), 60%, 97%);
+    --secondary-c-high-1:   hsl(var(--secondary-h), 60%, 100%);
+    --secondary-c-high-2:   hsl(var(--secondary-h), 60%, 100%);
+    --secondary-c-strong:   hsl(var(--secondary-h), var(--secondary-s-strong), calc(70% * var(--secondary-l-k-low)));
+    --secondary-fc-low-2:   hsl(var(--secondary-h), 45%, calc(70% * var(--secondary-l-k)));
+    --secondary-fc-low:     hsl(var(--secondary-h), 45%, calc(75% * var(--secondary-l-k)));
+    --secondary-fc-low-0-1: hsl(var(--secondary-h), 45%, calc(80% * var(--secondary-l-k)));
+    --secondary-fc:         hsl(var(--secondary-h), 85%, calc(87.5% * var(--secondary-l-k)));
+
+    --item-c-hover:         var(--secondary-c-high-1);
+  }
+  .theme-secondary-scheme-shaded.dark-mode {
+    --secondary-c-low-3:   hsl(var(--secondary-h), 15%, 12%);
+    --secondary-c-low-2:   hsl(var(--secondary-h), 20%, 15%);
+    --secondary-c-low-1:   hsl(var(--secondary-h), 20%, 20%);
+    --secondary-c-low-0-2: hsl(var(--secondary-h), 20%, 20%);
+    --secondary-c-low-0-1: hsl(var(--secondary-h), 20%, 21.5%);
+    --secondary-c:         hsl(var(--secondary-h), 20%, 25%);
+    --secondary-c-high-1:  hsl(var(--secondary-h), 20%, 30%);
+    --secondary-c-high-2:  hsl(var(--secondary-h), 20%, 35%);
+    --secondary-c-strong:  hsl(var(--secondary-h), 85%, 60%);
+    
+    --shadow-focus-c:      hsl(var(--secondary-h), 50%, 35%);
+  }
+  
+    /*——— SECTION Schemes/Shaded/UniformlySaturated/Saturation ———*/
+
+  .theme-secondary-scheme-saturated-shaded {
+    --secondary-s:          60%;
+  }
+  .theme-secondary-scheme-saturated-3-4-shaded {
+    --secondary-s:          80%;
+  }
+  .theme-secondary-scheme-fully-saturated-shaded {
+    --secondary-s:          100%;
+    --secondary-s-strong:   100%;
+  }
+
+    /*——— SECTION Schemes/Shaded/UniformlySaturated ———*/
+
+  .theme-secondary-scheme-saturated-3-4-shaded,
+  .theme-secondary-scheme-fully-saturated-shaded {
+    --secondary-c-low-3:    hsl(var(--secondary-h), var(--secondary-s), 75%);
+    --secondary-c-low-2:    hsl(var(--secondary-h), var(--secondary-s), 80%);
+    --secondary-c-low-1:    hsl(var(--secondary-h), var(--secondary-s), 90%);
+    --secondary-c-low-0-2:  hsl(var(--secondary-h), var(--secondary-s), 93%);
+    --secondary-c-low-0-1:  hsl(var(--secondary-h), var(--secondary-s), 95%);
+    --secondary-c:          hsl(var(--secondary-h), var(--secondary-s), 97%);
+    --secondary-c-high-1:   hsl(var(--secondary-h), var(--secondary-s), 100%);
+    --secondary-c-high-2:   hsl(var(--secondary-h), var(--secondary-s), 100%);
+    --secondary-c-strong:   hsl(var(--secondary-h), var(--secondary-s-strong), calc(70% * var(--secondary-l-k-low)));
+    --secondary-fc-low-2:   hsl(var(--secondary-h), var(--secondary-s), calc(70% * var(--secondary-l-k)));
+    --secondary-fc-low:     hsl(var(--secondary-h), var(--secondary-s), calc(75% * var(--secondary-l-k)));
+    --secondary-fc-low-0-1: hsl(var(--secondary-h), var(--secondary-s), calc(80% * var(--secondary-l-k)));
+    --secondary-fc:         hsl(var(--secondary-h), var(--secondary-s), calc(87.5% * var(--secondary-l-k)));
+  }
+  .theme-secondary-scheme-saturated-shaded.dark-mode,
+  .theme-secondary-scheme-saturated-3-4-shaded.dark-mode,
+  .theme-secondary-scheme-fully-saturated-shaded.dark-mode {
+    --secondary-c-low-3:   hsl(var(--secondary-h), var(--secondary-s), 12%);
+    --secondary-c-low-2:   hsl(var(--secondary-h), var(--secondary-s), 15%);
+    --secondary-c-low-1:   hsl(var(--secondary-h), var(--secondary-s), 20%);
+    --secondary-c-low-0-2: hsl(var(--secondary-h), var(--secondary-s), 20%);
+    --secondary-c-low-0-1: hsl(var(--secondary-h), var(--secondary-s), 21.5%);
+    --secondary-c:         hsl(var(--secondary-h), var(--secondary-s), 25%);
+    --secondary-c-high-1:  hsl(var(--secondary-h), var(--secondary-s), 30%);
+    --secondary-c-high-2:  hsl(var(--secondary-h), var(--secondary-s), 35%);
+    --secondary-c-strong:  hsl(var(--secondary-h), var(--secondary-s-strong), 60%);
+    
+    --shadow-focus-c:      hsl(var(--secondary-h), var(--secondary-s), 35%);
+  }
+
+    /*——— SECTION Schemes/Bright/Saturation ———*/
+  
+  .theme-secondary-scheme-saturated-bright {
+    --secondary-s:          60%;
+  }
+  .theme-secondary-scheme-saturated-3-4-bright {
+    --secondary-s:          80%;
+  }
+  .theme-secondary-scheme-fully-saturated-bright {
+    --secondary-s:          100%;
+  }
+
+    /*——— SECTION Schemes/Bright ———*/
+
+  :root.theme-secondary-scheme-saturated-bright,
+  :root.theme-secondary-scheme-saturated-3-4-bright,
+  /*  TODO(bp+n) */
+  :root.theme-secondary-scheme-fully-saturated-bright {
+    --secondary-h:          var(--primary-h);
+    --secondary-c-low-3:    hsl(var(--secondary-h), var(--secondary-s), 35%);
+    --secondary-c-low-2:    hsl(var(--secondary-h), var(--secondary-s), 40%);
+    --secondary-c-low-1:    hsl(var(--secondary-h), var(--secondary-s), 45%);
+    --secondary-c-low-0-2:  hsl(var(--secondary-h), var(--secondary-s), 46%); 
+    --secondary-c-low-0-1:  hsl(var(--secondary-h), var(--secondary-s), 47%);
+    --secondary-c:          hsl(var(--secondary-h), var(--secondary-s), 50%);
+    --secondary-c-high-1:   hsl(var(--secondary-h), var(--secondary-s), 55%);
+    --secondary-c-high-2:   hsl(var(--secondary-h), var(--secondary-s), 60%);
+    --secondary-c-strong:   hsl(var(--secondary-h), var(--secondary-s-strong), calc(50% * var(--secondary-l-k)));
+    --secondary-fc-low-2:   hsl(var(--secondary-h), 100%, 60%);
+    --secondary-fc-low:     hsl(var(--secondary-h), 100%, 65%);
+    --secondary-fc-low-0-1: hsl(var(--secondary-h), 100%, 70%);
+    --secondary-fc:         hsl(var(--secondary-h), 100%, 75%);
+
+    --item-c-hover:         var(--secondary-c-high-2); /* var(--secondary-c-low-0-2) */
+
+    --settings-section-control-thumb-c: var(--secondary-c-high-1);
+    --settings-section-input-bc:        var(--secondary-fc);
+    --settings-section-input-bd-c:      var(--secondary-c-low-3);
+
+    --sl-color-primary-600:             var(--secondary-fc);
+    --sl-checkbox-control-fc:           var(--surface-text-c);
+ /* --sl-checkbox-control-c-checked-hover: var(--secondary-c-high-2); */
+    --sl-option-base-fc-current:        var(--sl-option-base-fc-default);
+
+    --sl-focus-ring-color: var(--shadow-focus-c);
+  }
+  .theme-secondary-scheme-saturated-bright.dark-mode,
+  .theme-secondary-scheme-saturated-3-4-bright.dark-mode,
+  .theme-secondary-scheme-fully-saturated-bright.dark-mode {
+    --secondary-text-c:          var(--secondary-text-c-on-light);
+     
+    --sl-checkbox-control-fc:    var(--sl-checkbox-control-fc-default);
+    --sl-option-base-fc-current: var(--sl-option-base-fc-current-default);
+  }
+  .blue-secondary-theme.theme-secondary-scheme-saturated-bright.dark-mode {
+    --secondary-text-c: var(--secondary-text-c-on-dark);
+  }
+  .adapt-contrast-on-secondary.theme-secondary-scheme-saturated-bright,
+  .adapt-contrast-on-secondary.theme-secondary-scheme-saturated-3-4-bright,
+  .adapt-contrast-on-secondary.theme-secondary-scheme-fully-saturated-bright  {
+    --secondary-fc-low-2:   hsl(var(--secondary-h), 100%, 70%);
+    --secondary-fc-low:     hsl(var(--secondary-h), 100%, 70%);
+    --secondary-fc-low-0-1: hsl(var(--secondary-h), 100%, 75%);
+    --secondary-fc:         hsl(var(--secondary-h), 100%, 75%);
+
+    --secondary-text-c:     var(--secondary-text-c-on-dark);
+    --settings-section-input-fc: var(--secondary-text-c-on-light);
+  }
+
+/*—— ENDREGION Variables/ColorThemes/Colored/Secondary ——*/
+
+
+/*——— REGION Variables/ColorThemes/Colored/SurfaceVariant ————*/
+
+    /*——— SECTION Hue ———*/
+
+  .theme-surface-variant-hue-source-primary {
+    --surface-variant-h: var(--primary-h);
+  }
+  .theme-surface-variant-hue-source-secondary {
+    --surface-variant-h: var(--secondary-h);
+  }
+
+    /*——— SECTION Saturation ———*/
+
+  .theme-surface-variant-saturation-low {
+    --surface-variant-s-factor: 0.5;
+  }
+  .theme-surface-variant-saturation-medium {
+    --surface-variant-s-factor: 1;
+  }
+  .theme-surface-variant-saturation-high {
+    --surface-variant-s-factor: 1.5;
+  }
+
+    /*——— SECTION Schemes/? ———*/
+
+  .theme-surface-variant-scheme-colored {
+    --surface-variant-l-k:          1; 
+
+    /* TODO(bp+n): high/soft/subtle-desaturated, muted */
+    /* TODO(bp+n)
+       secondary, auxiliary, supplementary, support,
+       meta, detail
+     */
+    /* TODO(bp+c): clamp saturation */
+    --surface-variant-c-low-2:      hsl(var(--surface-variant-h), calc(30% * var(--surface-variant-s-factor)), 80%);
+    --surface-variant-c-low:        hsl(var(--surface-variant-h), calc(30% * var(--surface-variant-s-factor)), 90%);
+    --surface-variant-c:            hsl(var(--surface-variant-h), calc(57% * var(--surface-variant-s-factor)), 97%);
+    --surface-variant-c-high:       hsl(var(--surface-variant-h), calc(60% * var(--surface-variant-s-factor)), 100%);
+    --surface-variant-c-high-2:     hsl(var(--surface-variant-h), calc(60% * var(--surface-variant-s-factor)), 100%);
+    --surface-variant-c-high-3:     hsl(var(--surface-variant-h), calc(60% * var(--surface-variant-s-factor)), 100%);
+    --surface-variant-text-c-low:   hsl(var(--surface-variant-h), calc(30% * var(--surface-variant-s-factor)), 15%);
+    --surface-variant-text-c:       hsl(var(--surface-variant-h), calc(30% * var(--surface-variant-s-factor)), 20%);
+    --surface-variant-text-c-subtle: hsl(var(--surface-variant-h), calc(25% * var(--surface-variant-s-factor)), 35%);
+    --surface-variant-fc:           hsl(var(--surface-variant-h), calc(45% * var(--surface-variant-s-factor)), 60%);
+    --surface-variant-fc-saturated: hsl(var(--surface-variant-h), calc(65% * var(--surface-variant-s-factor)), 60%);
+    --surface-variant-fc-high:      hsl(var(--surface-variant-h), calc(85% * var(--surface-variant-s-factor)), calc(87.5% * var(--surface-variant-l-k)));
+    --surface-variant-fc-soft-desaturated: hsl(var(--surface-variant-h), calc(30% * var(--surface-variant-s-factor)), 75%);
+    --surface-variant-fc-auxiliary: var(--surface-variant-fc-soft-desaturated);
+  }
+  .theme-surface-variant-scheme-colored.dark-mode {
+    --surface-variant-c-low-2:      var(--unused-c);
+ /* --surface-variant-c-low:        hsl(var(--surface-variant-h), calc(0% * var(--surface-variant-s-factor)), 12%); */
+    --surface-variant-c-low:        var(--unused-c);
+ /* --surface-variant-c:            hsl(var(--surface-variant-h), calc(5% * var(--surface-variant-s-factor)), 20%); */
+    --surface-variant-c:            hsl(var(--surface-variant-h), calc(0% * var(--surface-variant-s-factor)), 20%);
+    --surface-variant-c-high:       hsl(var(--surface-variant-h), calc(0% * var(--surface-variant-s-factor)), 25%);
+    --surface-variant-c-high-2:     hsl(var(--surface-variant-h), calc(0% * var(--surface-variant-s-factor)), 30%);
+    --surface-variant-c-high-3:     hsl(var(--surface-variant-h), calc(0% * var(--surface-variant-s-factor)), 35%);
+    --surface-variant-text-c-low:   hsl(var(--surface-variant-h), calc(0% * var(--surface-variant-s-factor)), 85%);
+    --surface-variant-text-c:       hsl(var(--surface-variant-h), calc(0% * var(--surface-variant-s-factor)), 90%);
+    --surface-variant-text-c-subtle: hsl(var(--surface-variant-h), calc(0% * var(--surface-variant-s-factor)), 80%);
+    --surface-variant-fc:           hsl(var(--surface-variant-h), calc(45% * var(--surface-variant-s-factor)), 60%);
+    --surface-variant-fc-saturated: hsl(var(--surface-variant-h), calc(65% * var(--surface-variant-s-factor)), 60%);
+    --surface-variant-fc-high:      hsl(var(--surface-variant-h), calc(80% * var(--surface-variant-s-factor)), 80%);
+    --surface-variant-fc-soft-desaturated: hsl(var(--surface-variant-h), calc(10% * var(--surface-variant-s-factor)), 50%);
+  }
+
+/*—— ENDREGION Variables/ColorThemes/Colored/SurfaceVariant ——*/
+
+
+/*——— REGION Variables/ColorThemes/? ————*/
+  
+    /*——— SECTION Accented ———*/
+
+  :root.theme-accent-links-primary {
+    --a-fc: var(--primary-c);
+  }
+  :root.theme-accent-links-active-primary {
+    --a-fc: var(--primary-c-active-high);
+  }
+  :root.theme-accent-hovered-links-primary {
+    --a-fc-hover: var(--primary-c);
+  }
+
+/*—— ENDREGION Variables/ColorThemes/? ——*/
+
+
+
+/*——————————————— REGION Variables/Common ———————————————*/
+
+    /*——— SECTION Properties ———*/
+
+  :root {
+    --border-w:           0.0625rem;
+    --border-s:           solid;
+
+    --border-c:           var(--surface-c-low-3);
+    --border-focus-c:     var(--secondary-c-strong);
+    --shadow-focus-c:     var(--secondary-fc);
+
+    --border:             var(--border-w) var(--border-s) var(--border-c);
+    --border-focus:       var(--border-w) var(--border-s) var(--border-focus-c);
+    --outline:            0.25rem solid var(--border-focus-c);
+
+    --border-r-s:         0.5rem; /* 0.25rem; */
+    --border-r-m:         0.5rem;
+    --border-r-l:         0.75rem;
+
+    --thumb-size-v:       1.375rem; /* TODO(bp+n): --thumb-size-v, --thumb-size-root */
+    --thumb-size:         var(--thumb-size-v);
+    --thumb-width:        var(--thumb-size-v);
+    --thumb-height:       var(--thumb-size-v);
+  }
+
+    /*——— SECTION Elements ———*/
+
+  :root {
+    --body-margin:        1rem;
+
+    --body-bc:            var(--surface-c);
+    --body-fc:            var(--surface-text-c);
+    
+    --h2-fc:              var(--surface-variant-fc-high);
+    --h3-fc:              var(--surface-variant-fc);
+    --h4-fc:              var(--surface-variant-fc);
+    --a-fc:               var(--surface-variant-fc-saturated);
+    --a-fc-hover:         var(--a-fc);
+    --marker-c:           var(--surface-variant-fc);
+
+    --blockquote-padding: 1rem 1rem;
+    --blockquote-lbd-c:   var(--surface-variant-fc-soft-desaturated);
+    --blockquote-bc:      var(--surface-variant-c-low);
+    --blockquote-fc:      var(--surface-variant-text-c-subtle);
+
+    --code-padding:       var(--blockquote-padding);
+    --code-bc:            var(--blockquote-bc);
+    --code-fc:            var(--body-fc);
+
+    --hr-margin:          1rem 0rem;
+
+    --button-c:           var(--surface-variant-fc-saturated);
+
+    --input-text-form-bc:       var(--surface-c-high);
+    --input-text-form-bd:       var(--border);
+    --input-text-form-r:        var(--border-r-s);
+    --input-text-form-ph-c:     var(--border-c);
+    --input-text-form-o:        none;
+    --input-text-form-bd-focus: var(--border-focus);
+    --input-text-form-sh-focus: 0 0 0.5rem var(--shadow-focus-c);
+  }
+
+    /*——— SECTION Classes ———*/
+
+  :root {
+
+      /*——— SUBSECTION HeaderSection ———*/
+
+    --header-section-bc-v:    var(--surface-variant-c);
+    
+    --header-section-bc:      var(--header-section-bc-v);
+    --header-section-bd-c:    var(--border-c);
+    
+    --header-section-bd-c-colored-low:  var(--surface-variant-c-low-2);
+    --header-section-bd-c-colored-high: var(--surface-variant-c-high-3);
+
+      /*——— SUBSECTION FooterSection ———*/
+
+    --footer-section-bc:      var(--header-section-bc);
+    --footer-section-bd-c:    var(--header-section-bd-c);
+
+      /*——— SUBSECTION BodySection ———*/
+
+    --body-section-bc-v:        var(--surface-c-high);
+    --body-section-bd-w-thin:   var(--border-w);
+    --body-section-bd-w-medium: 0.25rem;
+    --body-section-bd-w-thick:  1rem;
+
+    --body-section-max-width: 30rem;
+    --body-section-margin:    1rem auto;
+    --body-section-bc:        var(--body-section-bc-v);
+    --body-section-bd-w:      var(--body-section-bd-w-thin);
+    --body-section-bd-s:      none;
+    --body-section-bd-c:      var(--border-c);
+    --body-section-r:         var(--border-r-m);
+    --body-section-sh:        0rem 0.125rem 0.25rem rgba(0,0,0,0.1);
+    --body-section-img-tbd-c: var(--surface-c);
+
+    --body-section-bd-c-colored-low:  var(--surface-c-low-2);
+    --body-section-bd-c-colored-high: var(--surface-c-high-3);
+
+      /*——— SUBSECTION Other ———*/
+
+ /* --item-c-hover */
+    --item-c-active:      var(--secondary-c-low-1);
+
+    --tooltip-bc:         hsl(30, 57%, 98%);
+    --tooltip-sh:         0rem 0.125rem 0.5rem rgba(0,0,0,0.1);
+
+    --error-section-bc:   #e03030;
+    --error-section-p-fc: #ffffff;
+  }
+
+    /*——— SECTION ID ———*/
+
+  :root {
+
+      /*——— SUBSECTION TopSection ———*/
+
+    --top-section-bc-v:  var(--primary-c);
+
+    --top-section-bc:    var(--top-section-bc-v);
+    --top-section-fc:    var(--primary-fc);
+    --top-section-h1-fc: var(--primary-text-c);
+    --top-section-bd-c:  var(--border-c);
+
+    --top-section-bd-c-colored-low:  var(--primary-c-low);
+    --top-section-bd-c-colored-high: var(--primary-c-high);
+
+      /*——— SUBSECTION SettingsSection ———*/
+
+    --settings-section-bc-v:              var(--secondary-c);
+    
+    --settings-section-bc:                var(--settings-section-bc-v);
+    --settings-section-bc-low:            var(--secondary-c-low-0-1);
+    --settings-section-fc:                var(--secondary-text-c);
+    --settings-section-h2-fc:             var(--secondary-fc);
+    --settings-section-sub-h-fc-high:     var(--secondary-fc-low-0-1);
+    --settings-section-sub-h-fc:          var(--secondary-fc-low);
+    --settings-section-sub-h-fc-low:      var(--secondary-fc-low-2);
+    --settings-section-bd-c:              var(--border-c);
+    --settings-section-control-bc:        var(--secondary-c-low-2);
+    --settings-section-control-bc-low:    var(--secondary-c-low-3);
+    --settings-section-control-thumb-c:   var(--secondary-c-high-2);
+    --settings-section-input-bc:          var(--secondary-c-high-2);
+    --settings-section-input-fc:          var(--settings-section-fc);
+
+    --settings-section-hr-c-low-2:        var(--secondary-c-low-3);
+    --settings-section-hr-c-low-1:        var(--secondary-c-low-2);
+    --settings-section-hr-c-high-1:       var(--secondary-c);
+    --settings-section-hr-c-high-2:       var(--secondary-c-high-1);
+    --settings-section-bd-c-colored-low:  var(--secondary-c-low-2);
+    --settings-section-bd-c-colored-high: var(--secondary-c-high-2);
+    --settings-section-input-bd-c:        var(--secondary-c-low-3);
+
+      /*——— SUBSECTION Other ———*/
+
+    --dev-settings-display: none;
+    
+    --search-display:       none;
+    --filter-display:       none;
+
+    --post-counter-c:       var(--surface-variant-fc-auxiliary);
+    --post-counter-fs:      1rem;
+  }
+
+    /*——— SECTION Shoelace ———*/
+
+  :root {
+    --sl-color-primary-600: var(--primary-c);
+
+    --sl-font-sans:         inherit;
+    
+    --sl-checkbox-control-fc-default:        var(--sl-color-neutral-0);
+
+    --sl-checkbox-control-fc:                var(--sl-checkbox-control-fc-default);
+    --sl-checkbox-control-bd-c-hover:        var(--secondary-fc);
+    --sl-checkbox-control-c-checked-hover:   var(--secondary-fc);
+    
+    --wa-form-control-label-color:       var(--surface-text-c);
+    --wa-form-control-label-font-weight: 400;
+    
+    --sl-option-base-fc-default:         var(--surface-text-c);
+    --sl-option-base-fc-current-default: var(--sl-color-neutral-0);
+    --sl-option-base-fc:                 var(--sl-option-base-fc-default);
+    --sl-option-base-fc-current:         var(--sl-option-base-fc-current-default);
+    
+    --sl-input-border-width:       var(--border-w);
+    --sl-input-border-color:       var(--border-c);
+    --sl-input-border-color-focus: var(--border-focus-c);
+    --sl-input-focus-ring-color:   var(--shadow-focus-c);
+    
+    --sl-focus-ring-width: 0.1875rem;
+    --sl-focus-ring-color: var(--border-focus-c);
+  }
+  
+  #settings-section {
+    --sl-input-background-color: var(--settings-section-input-bc);
+    --sl-input-border-color:     var(--settings-section-input-bd-c);
+    --sl-input-color:            var(--settings-section-input-fc);
+    --sl-input-color-hover:      var(--sl-input-color);
+    /* --sl-input-background-color-focus: var(--sl-input-background-color); */
+  }
+
+/*————————————— ENDREGION Variables/Common ——————————————*/
+
+
+
+/*—————————————— REGION Variables/Settings ——————————————*/
+
+  .dark-mode {
+
+      /*——— SECTION Properties ———*/
+
+    --border-c:           var(--surface-c-high-3);
+    /* --shadow-focus-c:     var(--unspecified-c); */
+
+      /*——— SECTION Elements ———*/
+
+    --body-bc:            var(--surface-c-low-2);
+
+    --blockquote-bc:      var(--surface-variant-c-high-3);
+
+    --code-fc:            var(--body-fc);
+    --input-text-form-bc: var(--surface-c-low); /* l: 20% | 18% | 16% | 14% */
+
+      /*——— SECTION Classes ———*/
+
+    --header-section-bc:      var(--surface-c-high);
+    --header-section-bd-c-colored-low: var(--surface-c-low);
+    
+    --body-section-bc:        var(--surface-c);
+    --body-section-img-tbd-c: var(--surface-c-high);
+
+    --body-section-bd-c-colored-low: var(--surface-c-low);
+
+    --tooltip-bc:             var(--surface-c-high-2);
+
+      /*——— SECTION ID ———*/
+      
+    /* TODO(bp+urm) */
+    /* --settings-section-sub-h-fc: var(--secondary-fc); */
+    
+    --settings-section-input-bc:   var(--secondary-c-low-3);
+    --settings-section-input-bd-c: var(--secondary-c-high-2);
+
+      /*——— SECTION Shoelace ———*/
+
+    --sl-color-neutral-0:        var(--surface-c-low-2);
+
+    --sl-option-base-fc-default: var(--surface-text-c-low);
+    --sl-input-border-color:     var(--secondary-c-high-2);
+  }
+
+  .classic-style {
+    
+      /*——— SECTION Properties ———*/
+
+    --border-r-s:        0rem;
+    --border-r-m:        0rem;
+    --border-r-l:        0rem;
+    
+      /*——— SECTION Elements ———*/
+
+    --input-text-form-sh-focus: none;
+
+      /*——— SECTION Classes ———*/
+
+    --body-section-bd-s: var(--border-s);
+    --body-section-sh:   none;
+    
+    --tooltip-sh:        none;
+  }
+  
+  :root,
+  .visual-density-compact {
+    --body-margin:         0.5rem;
+    --body-section-margin: 0.5rem auto;
+    --hr-margin:           0.5rem 0rem;
+    --item-padding:        0.5rem 1rem;
+    --select-padding:      0.25rem 1rem;
+    --settings-subsection-margin: 0.5rem 0rem;
+  }
+  .visual-density-normal {
+    --body-margin:         0.5rem;
+    --body-section-margin: 0.5rem auto;
+    --item-padding:        1rem;
+    --select-padding:      0.5rem 1rem;
+    --settings-subsection-margin: 1rem 0rem;
+  }
+  .visual-density-low {
+    --body-margin:         0.5rem;
+    --body-section-margin: 0.5rem auto;
+    --item-padding:        1.5rem 1rem;
+    --select-padding:      0.5rem 1rem;
+    --settings-subsection-margin: 1rem 0rem;
+  }
+
+  .dev-mode {
+    --dev-settings-display: block;
+  }
+
+/*———————————— ENDREGION Variables/Settings —————————————*/
+
+
+
+/*—————————— REGION Variables/Settings/DevMode ——————————*/
+
+  :root {
+    --font-family-ui-stack: "Roboto", "Noto Sans", "Open Sans", system-ui, sans-serif;
+    --font-family-post-stack: var(--font-family-ui-stack);
+    --code-font-family: "Roboto Mono", "Cascadia Code", monospace;
+  }
+  :root,
+  .font-ui-roboto {
+    --font-family-ui: "Roboto", var(--font-family-ui-stack);
+  }
+  .font-ui-noto {
+    --font-family-ui: "Noto Sans", var(--font-family-ui-stack);
+  }
+  .font-ui-open-sans {
+    --font-family-ui: "Open Sans", var(--font-family-ui-stack);
+  }
+  .font-ui-inter {
+    --font-family-ui: "Inter", var(--font-family-ui-stack);
+  }
+  .font-ui-merriweather {
+    --font-family-ui: "Merriweather", var(--font-family-ui-stack);
+  }
+  .font-ui-playfair-display {
+    --font-family-ui: "Playfair Display", var(--font-family-ui-stack);
+  }
+  .font-ui-tinos {
+    --font-family-ui: "Tinos", var(--font-family-ui-stack);
+  }
+  .font-ui-lora {
+    --font-family-ui: "Lora", var(--font-family-ui-stack);
+  }
+  .font-ui-bree-serif {
+    --font-family-ui: "Bree Serif", var(--font-family-ui-stack);
+  }
+  .font-ui-source-serif-4 {
+    --font-family-ui: "Source Serif 4", var(--font-family-ui-stack);
+  }
+
+  :root,
+  .font-post-roboto {
+    --font-family-post: "Roboto", var(--font-family-post-stack);
+  }
+  .font-post-noto {
+    --font-family-post: "Noto Sans", var(--font-family-post-stack);
+  }
+  .font-post-open-sans {
+    --font-family-post: "Open Sans", var(--font-family-post-stack);
+  }
+  .font-post-inter {
+    --font-family-post: "Inter", var(--font-family-post-stack);
+  }
+  .font-post-merriweather {
+    --font-family-post: "Merriweather", var(--font-family-post-stack);
+  }
+  .font-post-playfair-display {
+    --font-family-post: "Playfair Display", var(--font-family-post-stack);
+  }
+  .font-post-tinos {
+    --font-family-post: "Tinos", var(--font-family-post-stack);
+  }
+  .font-post-lora {
+    --font-family-post: "Lora", var(--font-family-post-stack);
+  }
+  .font-post-bree-serif {
+    --font-family-post: "Bree Serif", var(--font-family-post-stack);
+  }
+  .font-post-source-serif-4 {
+    --font-family-post: "Source Serif 4", var(--font-family-post-stack);
+  }
+
+  :root,
+  .fonts-styles-standard {
+    --font-size-ui:         1rem;
+    --font-size-post:       1rem;
+    --font-weight-ui:       normal;
+    --font-weight-post:     normal;
+
+    --h2-font-size:         1.25rem;
+    --h3-font-size:         1.1875rem;
+    --h4-font-size:         1.0625rem;
+
+    --h2-font-weight:       500;
+    --h3-font-weight:       bold;
+    --h4-font-weight:       bold;
+    --h4-font-weight-light: 500;
+    --a-font-weight:        500;
+    --a-font-weight-post:   500;
+    --a-text-decoration:    none;
+    --a-text-decoration-post: none;
+
+    --font-weight-strong:   500;
+  }
+  .font-ui-open-sans {
+    --a-font-weight:        600;
+    --font-weight-strong:   700;
+  }
+  .font-ui-playfair-display {
+    --font-size-ui:         1.05rem;
+  }
+  .font-post-playfair-display {
+    --font-size-post:       1.05rem;
+  }
+  .font-ui-tinos {
+    --font-size-ui:         1.157rem;
+  }
+  .font-post-tinos {
+    --font-size-post:       1.157rem;
+    /* NOTE: quick fix */
+    /* TODO(c): other solutions */
+    --a-text-decoration-post: underline;
+  }
+  .font-ui-lora {
+    --font-size-ui:         1.035rem;
+  }
+  .font-post-lora {
+    --font-size-post:       1.035rem;
+  }
+  .font-ui-bree-serif {
+    --font-size-ui:         1.07rem;
+  }
+  .font-post-bree-serif {
+    --font-size-post:       1.07rem;
+  }
+
+  /* TODO(bp+c): `bold` instead of `700` */
+  .font-ui-tinos,
+  .font-ui-merriweather {
+    --font-weight-strong:   700;
+  }
+  .bolder-fonts-ui {
+    --h2-font-weight:       700;
+    --h4-font-weight-light: 700;
+    --a-font-weight:        700;
+
+    --font-weight-strong:   700;
+  }
+  .fonts-styles-colored {
+    --h2-font-size:         1.5rem;
+    --h2-font-weight:       400;
+    --h4-font-weight-light: 400;
+  }
+
+  .outline-mode {
+    --body-section-bc:     transparent;
+    --body-section-sh:     none;
+    --top-section-bc:      transparent;
+    --top-section-fc:      var(--h2-fc);
+    --top-section-fc:      var(--primary-c);
+    --top-section-h1-fc:   var(--h2-fc);
+    --top-section-h1-fc:   var(--primary-c);
+    --header-section-bc:   transparent;
+    --settings-section-bc: transparent;
+    --footer-section-bc:   transparent;
+    --body-section-bd-s:   solid;
+  }
+  .outline-mode.theme-secondary-scheme-saturated-bright.dark-mode {
+    --settings-section-fc: var(--secondary-text-c-on-dark);
+  }
+  
+  .full-screen-width {
+    --body-margin:            0rem;
+    --body-section-max-width: none;
+    --body-section-r:         0rem;
+  }
+
+  .stacked {
+    --body-section-margin:  0rem auto;
+    --body-section-r:       0rem;
+    --body-section-divider-s: solid;
+  }
+
+  .section-divider-split,
+  .section-divider-none {
+    --settings-section-hr-c: var(--settings-section-hr-c-low-1);
+    --settings-section-hr-c-low: var(--settings-section-hr-c-low-2);
+  }
+  .section-divider-ridge {
+    --settings-section-hr-c: var(--settings-section-hr-c-high-2);
+    --settings-section-hr-c-low: var(--settings-section-hr-c-high-1);
+  }
+
+  .stacked.section-divider-split {
+    --body-section-divider-c:     var(--body-section-bd-c-colored-low);
+    --top-section-divider-c:      var(--top-section-bd-c-colored-low);
+    --settings-section-divider-c: var(--settings-section-bd-c-colored-low);
+    --header-section-divider-c:   var(--header-section-bd-c-colored-low);
+    --footer-section-divider-c:   var(--header-section-divider-c);
+  }
+  .stacked.section-divider-ridge {
+    --body-section-divider-c:     var(--body-section-bd-c-colored-high);
+    --top-section-divider-c:      var(--top-section-bd-c-colored-high);
+    --settings-section-divider-c: var(--settings-section-bd-c-colored-high);
+    --header-section-divider-c:   var(--header-section-bd-c-colored-high);
+    --footer-section-divider-c:   var(--header-section-divider-c);
+  }
+  .stacked.section-divider-none {
+    --body-section-divider-s:     none;
+  }
+
+  .border-width-thin {
+    --body-section-bd-w: var(--body-section-bd-w-thin);
+  }
+  .border-width-medium {
+    --body-section-bd-w: var(--body-section-bd-w-medium);
+  }
+  .border-width-thick {
+    --body-section-bd-w: var(--body-section-bd-w-thick);
+  }
+
+  .colored-borders {
+    --body-section-bd-c:     var(--body-section-bd-c-colored-low);
+    --top-section-bd-c:      var(--top-section-bd-c-colored-low);
+    --settings-section-bd-c: var(--settings-section-bd-c-colored-low);
+    --header-section-bd-c:   var(--header-section-bd-c-colored-low);
+  }
+  .colored-borders.dark-mode {
+    --body-section-bd-c:     var(--body-section-bd-c-colored-high);
+    --top-section-bd-c:      var(--top-section-bd-c-colored-high);
+    --settings-section-bd-c: var(--settings-section-bd-c-colored-high);
+    --header-section-bd-c:   var(--header-section-bd-c-colored-high);
+  }
+  .outline-mode.test-colored-borders {
+    --body-section-bd-c:     var(--body-section-bc-v);
+    --top-section-bd-c:      var(--top-section-bc-v);
+    --settings-section-bd-c: var(--settings-section-bc-v);
+    --header-section-bd-c:   var(--header-section-bc-v);
+    
+    --body-section-bd-w:     1rem;
+  }
+
+  .search {
+    --search-display: block;
+  }
+  .filter {
+    --filter-display: block;
+  }
+
+  .post-actions-alignment-start {
+    --post-actions-jc: start;
+  }
+  .post-actions-alignment-space-around {
+    --post-actions-jc: space-around;
+  }
+  .post-actions-alignment-space-evenly {
+    --post-actions-jc: space-evenly;
+  }
+
+/*———————— ENDREGION Variables/Settings/DevMode —————————*/
+
+
+
+/*—————————————— REGION Elements ———————————————*/
+
+  :root {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    margin: var(--body-margin);
+    background-color: var(--body-bc);
+    color: var(--body-fc);
+    font-family: var(--font-family-ui);
+    font-size: var(--font-size-ui);
+    font-weight: var(--font-weight-ui);
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 300;
+  }
+
+  h1 > a {
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: none;
+  }
+
+  h1 > a:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  h2, .heading2 {
+    color: var(--h2-fc);
+    font-size: var(--h2-font-size);
+    font-weight: var(--h2-font-weight);
+  }
+
+  h3, .heading3 {
+    color: var(--h3-fc);
+    font-size: var(--h3-font-size);
+    font-weight: var(--h3-font-weight);
+  }
+
+  h4 {
+    color: var(--h4-fc);
+    font-size: var(--h4-font-size);
+    font-weight: var(--h4-font-weight);
+  }
+
+  strong {
+    font-weight: var(--font-weight-strong);
+  }
+
+  a {
+    color: var(--a-fc);
+    font-weight: var(--a-font-weight);
+    text-decoration: var(--a-text-decoration);
+  }
+
+  a:hover {
+    color: var(--a-fc-hover);
+    text-decoration: underline;
+  }
+
+  ul {
+    padding-left: 1.5rem;
+  }
+
+  ::marker {
+    color: var(--marker-c);
+  }
+
+  blockquote {
+    border-left: 0.25rem solid var(--blockquote-lbd-c);
+    padding: var(--blockquote-padding);
+    background-color: var(--blockquote-bc);
+    color: var(--blockquote-fc);
+  }
+  
+  blockquote > :first-child {
+    margin-top: 0;
+  }
+
+  blockquote > :last-child {
+    margin-bottom: 0;
+  }
+
+  pre code {
+    padding: var(--code-padding);
+    background-color: var(--code-bc);
+    color: var(--code-fc);
+    font-size: 1rem;
+    display: block;
+  }
+  
+  hr {
+    border: none;
+    border-top: var(--border-w) solid var(--unspecified-c);
+    margin: var(--hr-margin);
+  }
+
+  button {
+    color: var(--button-c);
+    background: none;
+    border: none;
+    padding: 0rem;
+    cursor: pointer;
+  }
+
+  button:hover {
+    transform: scale(1.1);
+  }
+
+  button:active {
+    transform: scale(0.90);
+  }
+
+  sl-button {
+    --sl-color-primary-500: var(--primary-c-active);
+  }
+
+  form input[type="text"] {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+    background: var(--input-text-form-bc);
+    color: inherit;
+    font-size: 1rem;
+    border: var(--input-text-form-bd);
+    border-radius: var(--input-text-form-r);
+    transition: all 0.25s;
+  }
+
+  form input[type="text"]:focus {
+    border: var(--input-text-form-bd-focus);
+    outline: var(--input-text-form-o);
+    box-shadow: var(--input-text-form-sh-focus);
+  }
+
+  form input[type="text"]::placeholder {
+    color: var(--input-text-form-ph-c);
+    font-style: italic;
+  }
+
+  input[list]::-webkit-calendar-picker-indicator {
+    /* NOTE: `display: none` does not seem to work */
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  select {
+    flex: 1;
+    font-size: inherit;
+  }
+
+  /* TODO(bp+c+mv) */
+  .body-section sl-details::part(base) {
+    border: none;
+    border-block-width: var(--border-w);
+    border-block-color: var(--unspecified-c);
+    border-block-start-style: solid;
+    border-radius: 0rem;
+    background: none;
+  }
+
+  /* TODO(bp+c+mv) */
+  #settings-section sl-details::part(base) {
+    border-block-color: var(--settings-section-hr-c);
+  }
+
+  /* TODO(bp+c+mv) */
+  #settings-section sl-details sl-details::part(base) {
+    border-block-color: var(--settings-section-hr-c-low);
+  }
+
+  .end-item-border .end-item sl-details::part(base) {
+    border-block-end-style: solid;
+  }
+  
+  sl-details::part(content) {
+    padding: 0rem;
+    padding-bottom: 0.5rem;
+  }
+
+  sl-details.section-container::part(content) {
+    padding-bottom: 0rem;
+  }
+
+  sl-details::part(summary-icon) {
+    rotate: 90deg;
+  }
+
+  sl-details[open]::part(summary-icon) {
+    rotate: 0deg;
+  }
+
+  sl-checkbox, sl-switch {
+    display: block;
+    padding: var(--item-padding);
+    cursor: pointer;
+  }
+
+  sl-checkbox::part(base),
+  sl-switch::part(base) {
+    width: 100%;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  sl-checkbox::part(control) {
+    color: var(--sl-checkbox-control-fc);
+  }
+
+  sl-checkbox::part(label),
+  sl-switch::part(label) {
+    margin-inline-start: 0rem;
+  }
+
+  sl-checkbox::part(form-control-help-text),
+  sl-switch::part(form-control-help-text) {
+    color: var(--settings-section-sub-h-fc);
+  }
+
+  sl-checkbox:hover::part(control) {
+    border-color: var(--sl-checkbox-control-bd-c-hover);
+  }
+
+  sl-checkbox:hover::part(control--checked) {
+    background: var(--sl-checkbox-control-c-checked-hover);
+    border-color: var(--sl-checkbox-control-c-checked-hover);
+  }
+
+  sl-switch {
+    --thumb-size: var(--thumb-size-v);
+  }
+
+  wa-slider {
+    --thumb-width: var(--thumb-size-v);
+    --thumb-height: var(--thumb-size-v);
+  }
+
+  sl-select {
+    padding: var(--select-padding);
+  }
+
+  sl-select[open],
+  sl-select:focus-within {
+    /* TODO(bp): --sl-input-c-focus */
+    --sl-input-color: var(--sl-option-base-fc);
+    --sl-input-color-hover: var(--sl-input-color);
+  }
+
+  sl-select::part(form-control),
+  wa-slider {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  sl-select::part(form-control-label),
+  wa-slider::part(label) {
+    flex: 1;
+    hyphens: auto;
+    overflow-wrap: anywhere;
+    margin-block: 0rem;
+    color: inherit;
+  }
+
+  sl-select::part(form-control-input),
+  wa-slider::part(slider) {
+    flex: 2;
+    max-width: 15rem;
+    margin-block: 0rem;
+  }
+
+  sl-select::part(combobox) {
+    color: var(--sl-input-color);
+    transition: none;
+  }
+
+  sl-select::part(listbox) {
+    /* sl-option::part(base) { color } */
+    --sl-color-neutral-700: var(--sl-option-base-fc);
+    /* sl-option::part(base).option--current { color } */
+    --sl-color-neutral-0: var(--sl-option-base-fc-current);
+    /* --sl-color-primary-600: var(--sl-option-base-bc-current); */
+  }
+
+  wa-slider {
+    padding: var(--item-padding);
+  }
+  wa-slider::part(thumb) {
+    border: var(--border);
+  }
+
+  #settings-section wa-slider::part(track),
+  #settings-section wa-slider::part(indicator) {
+    background-color: var(--settings-section-control-bc);
+  }
+  #settings-section sl-details sl-details wa-slider::part(track),
+  #settings-section sl-details sl-details wa-slider::part(indicator) {
+    background-color: var(--settings-section-control-bc-low);
+  }
+  #settings-section wa-slider::part(thumb) {
+    background-color: var(--settings-section-control-thumb-c);
+    border-color: var(--settings-section-control-bc);
+  }
+  #settings-section sl-details sl-details wa-slider::part(thumb) {
+    border-color: var(--settings-section-control-bc-low);
+  }
+
+  .header-section sl-input::part(base) {
+    border-color: var(--header-section-bd-c);
+  }
+
+  form sl-input,
+  form sl-dropdown {
+    width: 100%;
+  }
+
+  form sl-input::part(base) {
+    height: auto;
+    border-radius: var(--border-r-s);
+    background: var(--input-text-form-bc);
+    transition: all 0.25s;
+  }
+
+  form sl-input:focus-within::part(base) {
+    border: var(--input-text-form-bd-focus);
+    outline: var(--input-text-form-o);
+    box-shadow: var(--input-text-form-sh-focus);
+  }
+
+  form sl-input::part(input) {
+    height: 2.5rem;
+  }
+
+  .form-input-option-1 form sl-input::part(input) {
+    height: auto;
+    padding: 1rem;
+  }
+
+  form sl-input::part(input)::placeholder {
+    color: var(--input-text-form-ph-c);
+    font-style: italic;
+  }
+
+  form sl-dropdown {
+    min-width: 0;
+  }
+
+  form sl-dropdown::part(panel) {
+    border-radius: var(--border-r-m);
+    overflow: hidden;
+  }
+  
+/*————————————— ENDREGION Elements —————————————*/
+
+
+
+/*——————————————— REGION Attributes ———————————————*/
+
+  /* TODO(bp+w): period */
+  /* NOTE(rc)
+     Hide custom elements with overridden `display`.
+   */
+  [hidden] {
+    display: none;
+  }
+
+/*————————————— ENDREGION Attributes ——————————————*/
+
+
+
+/*——————————————————— REGION Classes ————————————————————*/
+
+  /* TODO(bp+c): order */
+
+  /* TODO(bp+c+rm) */
+  .column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .dropdown-menu-container {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  /* TODO(bp+c): place */
+  .spacer {
+    flex-grow: 1;
+  }
+
+  .icon {
+    /* NOTE(gpt):
+      "... images are inline by default and align
+      to the text baseline, causing extra space
+      below."
+     */
+    display: block;
+  }
+
+  .details-chevron {
+    transition: transform 0.25s ease;
+  }
+
+  .details-chevron.open {
+    transform: rotate(180deg);
+  }
+
+  img.emoji-flag {
+    height: 1em;
+  }
+
+  .button-container {
+    display: flex;
+  }
+
+  .button-container > button {
+    margin: 0rem 1rem;
+  }
+
+  /* TODO(bp): confirm */
+  @media (hover: hover) and (pointer: fine) {
+    .item > sl-checkbox:hover,
+    .item > sl-switch:hover {
+      background-color: var(--item-c-hover);
+    }
+  }
+
+  .item > sl-checkbox:active,
+  .item > sl-switch:active {
+    background-color: var(--item-c-active);
+  }
+  
+  .post-actions {
+    justify-content: var(--post-actions-jc);
+  }
+
+  /* TODO(bp+c): font property place */
+  .post-actions > button {
+    font: inherit;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .tooltip-text {
+    white-space: pre-wrap;
+  }
+
+  /* TODO(bp) */
+  .tooltip {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    background-color: var(--tooltip-bc);
+    /* TODO(bp+c): assuming body's font size is 16px */
+    font-size: 15px;
+    white-space: pre;
+    padding: 1rem;
+    border: var(--border);
+    border-radius: var(--border-r-m);
+    box-shadow: var(--tooltip-sh);
+    transition: visibility 0s 0.25s, opacity 0.25s;
+  }
+
+  .tooltip.visible {
+    visibility: visible;
+    opacity: 1;
+    /* TODO(bp): write note */
+    /* transition: opacity 0.25s; */
+    transition-delay: 0s;
+  }
+
+/*—————————————————— ENDREGION Classes ——————————————————*/
+
+
+
+/*————————————— REGION Classes/BodySection ——————————————*/
+
+    /*——— SECTION Common ———*/
+
+  .body-section {
+    max-width: var(--body-section-max-width);
+    margin: var(--body-section-margin);
+    padding: 0rem 1rem;
+    border-width: var(--body-section-bd-w);
+    border-style: var(--body-section-bd-s);
+    border-color: var(--body-section-bd-c);
+    border-radius: var(--body-section-r);
+    background-color: var(--body-section-bc);
+    overflow: hidden;
+    box-shadow: var(--body-section-sh);
+  }
+  .full-screen-width .body-section {
+    border-inline-style: none;
+  }
+
+    /*——— SECTION Specialized ———*/
+
+  .header-section {
+    background-color: var(--header-section-bc);
+    border-color: var(--header-section-bd-c);
+  }
+  
+  .error-section {
+    background-color: var(--error-section-bc);
+  }
+
+  .error-section p {
+    color: var(--error-section-p-fc);
+  }
+
+  .footer-section {
+    background-color: var(--footer-section-bc);
+    border-color: var(--footer-section-bd-c);
+  }
+
+    /*——— SECTION SectionBodyItems ?n ———*/
+
+  .body-section > .section-body > a {
+    display: block;
+  }
+
+  .body-section > .section-body > .content-subsection,
+  .body-section > .section-body.content-subsection {
+    font-family: var(--font-family-post);
+    font-size: var(--font-size-post);
+    font-weight: var(--font-weight-post);
+    --a-font-weight: var(--a-font-weight-post);
+    --a-text-decoration: var(--a-text-decoration-post);
+  }
+  .body-section > .section-body > .content-subsection > h4 {
+    font-family: var(--font-family-ui);
+  }
+
+  .body-section > .section-body img {
+    max-width: 100%;
+  }
+
+  .body-section > .section-body > img {
+    box-sizing: border-box;
+    display: block;
+    border-top: var(--border);
+    border-top-color: var(--body-section-img-tbd-c);
+    max-width: none;
+    width: calc(100% + 2rem);
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+  
+    /*——— SECTION CollapseExpand ?n ———*/
+
+  .body-section.collapsible > header,
+  header.body-section.collapsible {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+
+  .body-section .section-arrow {
+    color: var(--surface-variant-fc-soft-desaturated);
+    transition: transform 0.25s ease;
+  }
+
+  .body-section.collapsed > .section-body,
+  .body-section.collapsed + .section-body {
+    display: none;
+  }
+  .body-section.collapsed .section-arrow {
+    transform: rotate(90deg);
+  }
+
+    /*——— SECTION Stacked/Divider ———*/
+
+  .stacked .body-section {
+    border-block-start-style: var(--body-section-divider-s);
+    border-block-color: var(--body-section-divider-c);
+  }
+  .stacked #top-section {
+    border-block-color: var(--top-section-divider-c);
+  }
+  .stacked #settings-section {
+    border-block-color: var(--settings-section-divider-c);
+  }
+  .stacked .header-section {
+    border-block-color: var(--header-section-divider-c);
+  }
+  .stacked .footer-section {
+    border-block-start-color: var(--footer-section-divider-c);
+    border-block-end-style: none;
+  }
+
+  .stacked:not(.classic-style):not(.outline-mode) #top-section {
+    border-block-start-style: none;
+  }
+  .stacked.section-divider-ridge #top-section {
+    border-block-end-style: solid;
+  }
+  .stacked.section-divider-none .body-section {
+    border-block-style: none;
+  }
+
+  .stacked.classic-style #top-section,
+  .stacked.outline-mode #top-section {
+    border-block-start-style: solid;
+    border-block-start-color: var(--top-section-bd-c);
+  }
+  .stacked.classic-style .footer-section,
+  .stacked.outline-mode .footer-section {
+    border-block-end-style: solid;
+    border-block-end-color: var(--footer-section-bd-c);
+  }
+
+    /*——— SECTION Margins ———*/
+
+  .body-section > h1 {
+    margin: 1.5rem 0rem;
+  }
+
+  .body-section > h2,
+  .body-section > .heading2 {
+    margin: 1.25rem 0rem;
+  }
+
+  .body-section > h3,
+  .body-section > .heading3 {
+    margin: 1.125rem 0rem;
+  }
+
+  .body-section > header,
+  .body-section > .heading2 > h2,
+  .body-section > .heading3 > h3 {
+    margin: 0rem;
+  }
+
+  .body-section > *,
+  .body-section > .subsection > *,
+  .body-section > .section-body > *,
+  .body-section > .section-body > .content-subsection > * {
+    margin: 1rem 0rem;
+  }
+    
+  #settings-section > .subsection {
+    margin: var(--settings-subsection-margin);
+  }
+  .dev-mode #settings-section > .subsection {
+    margin-bottom: 0rem;
+  }
+  .end-item-border #settings-section > .subsection {
+    margin: var(--settings-subsection-margin);
+  }
+
+  #settings-section > .item,
+  #settings-section > .subsection > .item {
+    margin: 0rem -1rem;
+  }
+
+  .body-section > hr {
+    margin: var(--hr-margin);
+    margin-inline: -1rem;
+  }
+
+/*———————————— ENDREGION Classes/BodySection ————————————*/
+
+
+
+/*—————————————————————— REGION ID ——————————————————————*/
+
+  #top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    background: var(--top-section-bc);
+    border-color: var(--top-section-bd-c);
+  }
+
+  .top-section-texture-surface-1 #top-section {
+    background:
+      url("../assets/texture-05-192.png") center / 100%,
+      var(--top-section-bc);
+    background-blend-mode: luminosity;
+  }
+
+  #top-section h1 {
+    color: var(--top-section-h1-fc);
+  }
+
+  #top-section button {
+    color: var(--top-section-fc);
+  }
+
+  #top-section .icon {
+    color: var(--top-section-fc);
+  }
+
+  #right-column {
+    /* TODO(bp+c): order */
+    margin: 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  #settings-section {
+    background-color: var(--settings-section-bc);
+    color: var(--settings-section-fc);
+    border-color: var(--settings-section-bd-c);
+  }
+
+  #settings-section h2 {
+    color: var(--settings-section-h2-fc);
+  }
+
+  #settings-section hr {
+    border-top-color: var(--settings-section-hr-c);
+  }
+
+  #settings-section sl-details sl-details {
+    background-color: var(--settings-section-bc-low);
+  }
+
+  /* TODO(bp+rv) */
+  #settings-section sl-details::part(summary) {
+    color: var(--settings-section-sub-h-fc);
+    font-size: var(--h4-font-size);
+    font-weight: var(--h4-font-weight-light);
+  }
+  #settings-section sl-details::part(summary-icon) {
+    color: var(--settings-section-sub-h-fc-high);
+  }
+  .dark-mode #settings-section sl-details::part(summary-icon),
+  .theme-secondary-scheme-saturated-bright #settings-section sl-details::part(summary-icon) {
+    color: var(--settings-section-sub-h-fc);
+  }
+
+  /* TODO(bp+rv) */
+  #settings-section sl-details sl-details::part(summary) {
+    color: var(--settings-section-sub-h-fc-low);
+  }
+  #settings-section sl-details sl-details::part(summary-icon) {
+    color: var(--settings-section-sub-h-fc);
+  }
+  .dark-mode #settings-section sl-details sl-details::part(summary-icon),
+  .theme-secondary-scheme-saturated-bright #settings-section sl-details sl-details::part(summary-icon) {
+    color: var(--settings-section-sub-h-fc-low);
+  }
+
+  #settings-section sl-switch:not([checked])::part(control) {
+    background-color: var(--settings-section-control-bc);
+    border-color: var(--settings-section-control-bc);
+  }
+  
+  #settings-section sl-details sl-details sl-switch:not([checked])::part(control) {
+    background-color: var(--settings-section-control-bc-low);
+  }
+
+  #settings-section sl-switch:not([checked])::part(thumb) {
+    border-color: var(--settings-section-control-bc);
+  }
+
+  #settings-section sl-switch::part(thumb) {
+    background-color: var(--settings-section-control-thumb-c);
+  }
+
+  #settings-section > #dev-settings {
+    display: var(--dev-settings-display);
+  }
+
+  #search-section {
+    display: var(--search-display);
+  }
+
+  #search-form,
+  #filter-form {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  #filter-form {
+    font-family: var(--code-font-family);
+  }
+
+  .form-input-option-1 #search-form,
+  .form-input-option-1 #filter-form {
+    flex-direction: column;
+  }
+  .form-input-option-1 #search-form > sl-button
+  .form-input-option-1 #filter-form > sl-button {
+    width: 100%;
+  }
+
+  #filter-section {
+    display: var(--filter-display);
+  }
+
+  #post-counter {
+    color: var(--post-counter-c);
+    font-size: var(--post-counter-fs);
+  }
+
+/*———————————————————— ENDREGION ID —————————————————————*/
+
+
+
+/*—————————————————————— REGION Tasks ——————————————————————*/
+
+  /* TODO(bp+c): mark properties such as
+     `--sl-checkbox-control-fc` as custom sl properties
+   */
+
+  /* TODO(bp+c): light-mode instead of restoring
+     values with defaults
+     ```
+     --sl-checkbox-control-fc: var(--sl-checkbox-control-fc-default);
+     ```
+   */
+
+  /* TODO(bp+c): 1.25
+    Defaults for headers: 1.34, 1.245, 1.17, 1.33
+    ```
+    .body-section > h3 {
+      margin: 1.125rem 0rem;
+    }
+    ```
+   */
+
+  /* TODO(bp+c): add option to use Shoelace's default
+     summary-icon
+     ```
+     sl-details::part(summary-icon) {
+       rotate: 180deg;
+     }
+
+     sl-details[open]::part(summary-icon) {
+       rotate: 90deg;
+     }
+     ``` 
+   */
+
+/*———————————————————— ENDREGION Tasks —————————————————————*/
+
+
+
+/*—————————————————————— REGION Trash ——————————————————————*/
+
+  /*
+    .theme-scheme-shaded-secondary-2 {
+      --secondary-c-low-2:   hsl(var(--secondary-h), 35%, 80%);  // hsl(var(--secondary-h), 55%, 80%);
+      --secondary-c-low-1:   hsl(var(--secondary-h), 50%, 84%);
+      --secondary-c-low-0-1: hsl(var(--secondary-h), 50%, 89%);
+      --secondary-c:         hsl(var(--secondary-h), 60%, 95%);
+      --secondary-c-high-1:  hsl(var(--secondary-h), 60%, 97%);
+      --secondary-c-high-2:  hsl(var(--secondary-h), 60%, 100%);
+      --secondary-c-strong:  hsl(var(--secondary-h), 95%, 50%);
+      --secondary-fc:        hsl(var(--secondary-h), 85%, 67%);
+    }
+    .theme-scheme-shaded-secondary-2.dark-mode {
+      --secondary-c-low-2:  hsl(var(--secondary-h), 20%, 15%);
+      --secondary-c:        hsl(var(--secondary-h), 20%, 25%);
+      --secondary-c-high-2: hsl(var(--secondary-h), 20%, 35%);
+      --secondary-c-strong: hsl(var(--secondary-h), 85%, 67%);
+      --secondary-fc:       var(--secondary-c);
+      
+      --shadow-focus-c:     hsl(var(--secondary-h), 50%, 35%);
+
+      // --sl-checkbox-control-c-checked-hover: var(--secondary-c-high-2);
+    }
+  */
+
+  /*
+    .theme-scheme-shaded-secondary-3 {
+      --secondary-c-low-2:  hsl(var(--secondary-h), 35%, 80%); // hsl(var(--secondary-h), 55%, 80%);
+      --secondary-c-low-1:  hsl(var(--secondary-h), 50%, 90%);
+      --secondary-c:        hsl(var(--secondary-h), 60%, 95%);
+      --secondary-c-high-2: hsl(var(--secondary-h), 60%, 98%);
+      --secondary-c-strong: hsl(var(--secondary-h), 95%, 50%); // TODO(bp+c): hsl(var(--secondary-h), 95%, 65%);
+      --secondary-fc:       hsl(var(--secondary-h), 95%, 80%);
+    }
+    .theme-scheme-shaded-secondary-3.dark-mode {
+      --secondary-c-low-2:  hsl(var(--secondary-h), 20%, 15%);
+      --secondary-c:        hsl(var(--secondary-h), 20%, 25%);
+      --secondary-c-high-2: hsl(var(--secondary-h), 20%, 35%);
+      --secondary-c-strong: hsl(var(--secondary-h), 85%, 67%);
+      --secondary-fc:       var(--primary-c);
+      
+      --shadow-focus-c:     hsl(var(--secondary-h), 50%, 35%); // TODO(bp)
+
+      --sl-checkbox-control-c-checked-hover: var(--secondary-c-high-2);
+    }
+  */
+
+  /*
+    .theme-secondary-scheme-saturated-2 {
+      --secondary-c-low-2:   hsl(var(--secondary-h), 60%, 40%);
+      --secondary-c-low-1-1: hsl(var(--secondary-h), 60%, 43%);
+      --secondary-c-low-1:   hsl(var(--secondary-h), 60%, 45%);
+      --secondary-c-low-0-1: hsl(var(--secondary-h), 60%, 47%);
+      --secondary-c:         hsl(var(--secondary-h), 60%, 50%);
+      --secondary-c-high-1:  hsl(var(--secondary-h), 60%, 55%);
+      --secondary-c-high-2:  hsl(var(--secondary-h), 60%, 60%);
+      --secondary-fc:        hsl(var(--secondary-h), 100%, 75%);
+      --secondary-nfc:       var(--secondary-nfc-strong-on_dark);
+
+      --border-focus-c: hsl(var(--secondary-h), 95%, 50%); // hsl(var(--secondary-h), 95%, 45%);
+
+      --item-c-hover:   var(--secondary-c-low-1);
+      --item-c-active:  var(--secondary-c-low-1-1);
+
+      --settings-section-control-thumb-c: var(--secondary-c-high-1);
+
+      --sl-color-primary-600:           var(--secondary-fc);
+      --sl-checkbox-control-fc:         var(--surface-fc);
+      --sl-checkbox-control-bd-c-hover: var(--secondary-fc);
+      // --sl-checkbox-control-c-checked-hover: var(--secondary-c-high-2);
+      --sl-option-base-fc-selected:     var(--sl-option-base-fc-default);
+    }
+    .theme-secondary-scheme-saturated-2.dark-mode {
+      --shadow-focus-c:         var(--shadow-focus-c-on_light);
+      
+      --sl-checkbox-control-fc: var(--sl-checkbox-control-fc-default);
+      --sl-option-base-fc-selected: var(--sl-option-base-fc-selected-default);
+    }
+  */
+
+  /*
+    .colored-borders {
+      --body-section-bd-c:     var(--surface-c-low);
+      --top-section-bd-c:      var(--primary-c-low);
+      --settings-section-bd-c: var(--secondary-c-low-2);
+    }
+    .colored-borders.dark-mode {
+      --body-section-bd-c:     var(--surface-c-high-3);
+      --top-section-bd-c:      var(--primary-c-high);
+      --settings-section-bd-c: var(--secondary-c-high-2);
+    }
+  */
+
+  /* 
+    --surface-variant-c-6:           hsl(30, 45%, 60%);
+    --surface-variant-c-6-saturated: hsl(30, 65%, 60%);
+    --surface-variant-c-8:           hsl(30, 80%, 80%);
+
+    ...
+
+    --body-bc:            var(--surface-c-9-1);
+    --body-fc:            var(--surface-c-2);
+    --h2-fc:              var(--surface-variant-c-8);
+    --h3-fc:              var(--surface-variant-c-6);
+    --h4-fc:              var(--surface-variant-c-6);
+    --a-fc:               var(--surface-variant-c-6-saturated);
+    --marker-c:           var(--surface-variant-c-6);
+  */
+
+  /*
+    --surface-h:          30;
+    --surface-s-v:        30%;
+    --surface-s-factor:   0;
+    --surface-s:          calc(var(--surface-s-v) * var(--surface-s-factor));
+
+    ...
+
+    .theme-surface-variant-hue-source-surface {
+      --surface-variant-h: var(--surface-h);
+      --surface-variant-s-factor: var(--surface-s-factor);
+    }
+  */
+
+  /*
+    :root,
+    .subtle-depth {
+      --settings-section-bc-low: var(--secondary-c-low-0-1);
+    }
+  */
+
+  /* 
+      //——— SECTION Schemes/Common ———//
+
+    .theme-secondary-scheme-shaded,
+    .theme-secondary-scheme-saturated-shaded,
+    .theme-secondary-scheme-saturated-3-4-shaded,
+    .theme-secondary-scheme-fully-saturated-shaded,
+    .theme-secondary-scheme-saturated-bright,
+    .theme-secondary-scheme-saturated-3-4-bright,
+    .theme-secondary-scheme-fully-saturated-bright {
+      --border-focus-c:     var(--secondary-c-strong);
+      --shadow-focus-c:     var(--secondary-fc);
+    }
+  */
+
+/*———————————————————— ENDREGION Trash —————————————————————*/

@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="Oleksa Plotnyckyj">
+  <title>Oleksa Plotnyckyj — Personal Site</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon/fluent-color-notebook-32.svg">
+  <link rel="stylesheet" href="styles/external.css">
+  <link rel="stylesheet" href="styles.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "qs": "https://cdn.jsdelivr.net/npm/qs@6.14.0/+esm",
+        "mingo": "https://cdn.jsdelivr.net/npm/mingo@6.7.2/+esm",
+        "mingo/operators/pipeline":
+          "https://cdn.jsdelivr.net/npm/mingo@6.7.2/operators/pipeline/+esm"
+      }
+    }
+  </script>
+  <script src="scripts/external.js" type="module"></script>
+  <script src="scripts/index.js" type="module"></script>
+</head>
+<body>
+  <header>
+    <!-- HeaderSection/TopSection -->
+    <section class="body-section header-section" id="top-section">
+      <h1>
+        <a href="/">
+          <strong>Oleksa</strong> Plotnyckyj
+        </a>
+      </h1>
+      <div id="right-column">
+        <button id="settings-button" title="Settings">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24" height="24"
+            viewBox="0 0 24 24" 
+            fill="none" stroke="currentColor" 
+            stroke-width="2" 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            class="lucide lucide-settings-icon lucide-settings icon"
+            >
+            <path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </button>
+        <svg
+          xmlns="http://www.w3.org/2000/svg" 
+          width="24" height="24" 
+          viewBox="0 0 24 24" 
+          fill="none" stroke="currentColor" 
+          stroke-width="2" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          class="details-chevron lucide lucide-chevron-down-icon lucide-chevron-down icon"
+          >
+          <path d="m6 9 6 6 6-6"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- HeaderSection/Settings -->
+    <section class="body-section header-section" id="settings-section" hidden>
+      <header class="heading2">
+        <h2>Settings</h2>
+      </header>
+      <div class="subsection">
+        <div class="item">
+          <sl-switch id="dark-mode-checkbox">Dark Mode</sl-switch>
+        </div>
+        <div class="item">
+          <sl-switch id="higher-contrast-checkbox">Higher Contrast</sl-switch>
+        </div>
+        <div class="item">
+          <sl-switch id="classic-style-checkbox">Classic Style</sl-switch>
+        </div>
+        <div class="item">
+          <sl-select label="Theme" id="theme-select" hoist>
+            <sl-option
+              value="standard"
+              data-classes="green-yellow-theme blue-violet-secondary-theme"
+              data-fonts-styles="standard"
+              data-theme-secondary-scheme="standard"
+              data-theme-surface-variant-scheme="standard"
+              data-theme-accent="hovered-links-primary"
+            >
+              Standard
+            </sl-option>
+            <sl-option
+              value="standard-accented"
+              data-classes="green-yellow-theme blue-violet-secondary-theme"
+              data-fonts-styles="standard"
+              data-theme-secondary-scheme="standard"
+              data-theme-surface-variant-scheme="standard"
+              data-theme-accent="links-primary"
+            >
+              Standard / Accented
+            </sl-option>
+            <sl-option
+              value="green-magenta"
+              data-classes="yellow-green-theme magenta-secondary-theme"
+              data-fonts-styles="colored"
+              data-theme-secondary-scheme="shaded"
+              data-theme-surface-variant-scheme="colored"
+            >
+              Green / Magenta
+            </sl-option>
+            <sl-option
+              value="green"
+              data-classes="yellow-green-theme green-secondary-theme"
+              data-fonts-styles="colored"
+              data-theme-secondary-scheme="shaded"
+              data-theme-surface-variant-scheme="colored"
+            >
+              Green
+            </sl-option>
+            <sl-option
+              value="green-with-saturated-bright-secondary"
+              data-classes="yellow-green-theme green-secondary-theme"
+              data-fonts-styles="colored"
+              data-theme-secondary-scheme="saturated-bright"
+              data-theme-surface-variant-scheme="colored"
+            >
+              Green / Saturated
+            </sl-option>
+            <sl-option
+              value="blue-magenta"
+              data-classes="blue-theme magenta-secondary-theme"
+              data-fonts-styles="colored"
+              data-theme-secondary-scheme="shaded"
+              data-theme-surface-variant-scheme="colored"
+            >
+              Blue / Magenta
+            </sl-option>
+            <sl-option
+              value="blue"
+              data-classes="blue-theme blue-secondary-theme"
+              data-fonts-styles="colored"
+              data-theme-secondary-scheme="shaded"
+              data-theme-surface-variant-scheme="colored"
+            >
+              Blue
+            </sl-option>
+            <sl-option
+              value="blue-with-saturated-bright-secondary"
+              data-classes="blue-theme blue-secondary-theme"
+              data-fonts-styles="colored"
+              data-theme-secondary-scheme="saturated-bright"
+              data-theme-surface-variant-scheme="colored"
+            >
+              Blue / Saturated
+            </sl-option>
+            <sl-option
+              value="orange-blue"
+              data-classes="orange-theme blue-secondary-theme"
+              data-fonts-styles="colored"
+              data-theme-secondary-scheme="shaded"
+              data-theme-surface-variant-scheme="colored"
+            >
+              Orange / Blue
+            </sl-option>
+            <sl-option
+              value="green-blue"
+              data-classes="yellow-green-theme blue-secondary-theme"
+              data-fonts-styles="colored"
+              data-theme-secondary-scheme="shaded"
+              data-theme-surface-variant-scheme="colored"
+            >
+              Green / Blue
+            </sl-option>
+            <sl-option
+              value="custom"
+              data-classes="custom-theme"
+            >
+              Custom
+            </sl-option>
+          </sl-select>
+        </div>
+        <div class="item">
+          <!-- TODO(bp+n): High, Medium, Low -->
+          <sl-select label="Visual Density" id="visual-density-select" hoist>
+            <sl-option value="compact">
+              Compact
+            </sl-option>
+            <sl-option value="normal">
+              Normal
+            </sl-option>
+            <sl-option value="low">
+              Low
+            </sl-option>
+          </sl-select>
+        </div>
+      </div>
+      <hr>
+      <div class="subsection">
+        <div class="item">
+          <sl-checkbox id="dev-mode-checkbox">Dev Mode</sl-checkbox>
+        </div>
+      </div>
+      <div id="dev-settings" class="subsection">
+        <div class="item">
+          <sl-details summary="Appearance" class="section-container">
+            <span slot="expand-icon" aria-hidden="true">
+              <svg
+                xmlns="http://www.w3.org/2000/svg" 
+                width="24" height="24" 
+                viewBox="0 0 24 24" 
+                fill="none" stroke="currentColor" 
+                stroke-width="2" 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                class="lucide lucide-chevron-down-icon lucide-chevron-down icon"
+                >
+                <path d="m6 9 6 6 6-6"/>
+              </svg>
+            </span>
+            <span slot="collapse-icon" aria-hidden="true">
+              <svg
+                xmlns="http://www.w3.org/2000/svg" 
+                width="24" height="24" 
+                viewBox="0 0 24 24" 
+                fill="none" stroke="currentColor" 
+                stroke-width="2" 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                class="lucide lucide-chevron-down-icon lucide-chevron-down icon"
+                >
+                <path d="m6 9 6 6 6-6"/>
+              </svg>
+            </span>
+            <div class="item">
+              <sl-details summary="Color">
+                <span slot="expand-icon" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="24" height="24" 
+                    viewBox="0 0 24 24" 
+                    fill="none" stroke="currentColor" 
+                    stroke-width="2" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    class="lucide lucide-chevron-down-icon lucide-chevron-down icon"
+                    >
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </span>
+                <span slot="collapse-icon" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="24" height="24" 
+                    viewBox="0 0 24 24" 
+                    fill="none" stroke="currentColor" 
+                    stroke-width="2" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    class="lucide lucide-chevron-down-icon lucide-chevron-down icon"
+                    >
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </span>
+                <div class="item">
+                  <wa-slider
+                    id="primary-h-range"
+                    label="Primary Hue"
+                    min="0" max="360" step="5"
+                    with-tooltip
+                  ></wa-slider>
+                </div>
+                <div class="item">
+                  <wa-slider
+                    id="secondary-h-range"
+                    label="Secondary Hue"
+                    min="0" max="360" step="5"
+                    with-tooltip
+                  ></wa-slider>
+                </div>
+                <div class="item">
+                  <wa-slider
+                    id="surface-variant-h-range"
+                    label="Surface Variant Hue"
+                    min="0" max="360" step="5"
+                    with-tooltip
+                  ></wa-slider>
+                </div>
+                <div class="item">
+                  <!-- TODO(bp+c): replace "scheme" -->
+                  <sl-select label="Primary Scheme" id="theme-primary-scheme-select" hoist>
+                    <sl-option value="fully-saturated">
+                      Bright / Fully Saturated
+                    </sl-option>
+                    <sl-option value="saturated-3-4">
+                      Bright / Saturated 3/4
+                    </sl-option>
+                    <sl-option value="saturated">
+                      Bright / Saturated
+                    </sl-option>
+                  </sl-select>
+                </div>
+                <div class="item">
+                  <!-- TODO(bp+c): replace "shaded" -->
+                  <sl-select label="Secondary Scheme" id="theme-secondary-scheme-select" hoist>
+                    <sl-option value="standard">
+                      Standard
+                    </sl-option>
+                    <sl-option value="fully-saturated-bright">
+                      Bright / Fully Saturated
+                    </sl-option>
+                    <sl-option value="saturated-3-4-bright">
+                      Bright / Saturated 3/4
+                    </sl-option>
+                    <sl-option value="saturated-bright">
+                      Bright / Saturated
+                    </sl-option>
+                    <sl-option value="fully-saturated-shaded">
+                      Shaded / Fully Saturated
+                    </sl-option>
+                    <sl-option value="saturated-3-4-shaded">
+                      Shaded / Saturated 3/4
+                    </sl-option>
+                    <sl-option value="saturated-shaded">
+                      Shaded / Saturated
+                    </sl-option>
+                    <sl-option value="shaded">
+                      Shaded / Soft
+                    </sl-option>
+                  </sl-select>
+                </div>
+                <div class="item">
+                  <sl-select label="Surface Variant Scheme" id="theme-surface-variant-scheme-select" hoist>
+                    <sl-option value="standard">
+                      Standard
+                    </sl-option>
+                    <sl-option value="colored">
+                      Colored
+                    </sl-option>
+                  </sl-select>
+                </div>
+                <div class="item">
+                  <sl-select label="Surface Variant Hue Source" id="theme-surface-variant-hue-source-select" hoist>
+                    <sl-option value="primary">
+                      Primary
+                    </sl-option>
+                    <sl-option value="secondary">
+                      Secondary
+                    </sl-option>
+                    <sl-option value="default">
+                      Default
+                    </sl-option>
+                    <sl-option value="custom">
+                      Custom
+                    </sl-option>
+                  </sl-select>
+                </div>
+                <div class="item">
+                  <sl-select label="Surface Variant Saturation" id="theme-surface-variant-saturation-select" hoist>
+                    <sl-option value="low">
+                      Low
+                    </sl-option>
+                    <sl-option value="medium">
+                      Medium
+                    </sl-option>
+                    <sl-option value="high">
+                      High
+                    </sl-option>
+                  </sl-select>
+                </div>
+                <div class="item">
+                  <sl-select label="Accent" id="theme-accent-select" hoist>
+                    <sl-option value="default">
+                      Default
+                    </sl-option>
+                    <sl-option value="links-primary">
+                      Primary Colored Links
+                    </sl-option>
+                    <sl-option value="links-active-primary">
+                      Active Primary Colored Links
+                    </sl-option>
+                    <sl-option value="hovered-links-primary">
+                      Primary Colored Hovered Links
+                    </sl-option>
+                  </sl-select>
+                </div>
+                <div class="item">
+                  <!-- TODO(bp+w): on secondary -->
+                  <!-- TODO(bp+w): Adapt Contrast On Secondary -->
+                  <!-- TODO(bp+w): adapt, correct, improve, restore -->
+                  <sl-switch
+                    id="adapt-contrast-on-secondary-switch"
+                    help-text="
+                      Adapt foreground contrast for perceptually
+                      darker secondary color with medium brightness
+                    "
+                  >
+                    Adapt Foreground Contrast For Secondary
+                  </sl-switch>
+                </div>
+                <div class="item">
+                  <!-- TODO(bp+n):
+                    Increased Surface Levels Contrast
+                    Increased Surface Level Depth
+                    Increased Surface Contrast
+                    Increased Relative Depth Between Surfaces
+                    Deeper Surface Levels
+                    -->
+                  <sl-switch id="increased-surface-levels-distance-checkbox">
+                    Increased Distance Between Surface Levels
+                  </sl-switch>
+                </div>
+              </sl-details>
+            </div>
+            <div class="item">
+              <sl-details summary="Fonts">
+                <span slot="expand-icon" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="24" height="24" 
+                    viewBox="0 0 24 24" 
+                    fill="none" stroke="currentColor" 
+                    stroke-width="2" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    class="lucide lucide-chevron-down-icon lucide-chevron-down icon"
+                    >
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </span>
+                <span slot="collapse-icon" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="24" height="24" 
+                    viewBox="0 0 24 24" 
+                    fill="none" stroke="currentColor" 
+                    stroke-width="2" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    class="lucide lucide-chevron-down-icon lucide-chevron-down icon"
+                    >
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </span>
+                <div class="item">
+                  <sl-select label="UI Font" id="font-ui-select" hoist>
+                    <sl-option value="roboto">
+                      Roboto
+                    </sl-option>
+                    <sl-option value="noto">
+                      Noto Sans
+                    </sl-option>
+                    <sl-option value="open-sans">
+                      Open Sans
+                    </sl-option>
+                    <sl-option value="inter">
+                      Inter
+                    </sl-option>
+                    <sl-option value="merriweather">
+                      Merriweather
+                    </sl-option>
+                    <sl-option value="playfair-display">
+                      Playfair Display
+                    </sl-option>
+                    <sl-option value="tinos">
+                      Tinos
+                    </sl-option>
+                    <sl-option value="lora">
+                      Lora
+                    </sl-option>
+                    <sl-option value="bree-serif">
+                      Bree Serif
+                    </sl-option>
+                    <sl-option value="source-serif-4">
+                      Source Serif 4
+                    </sl-option>
+                  </sl-select>
+                </div>
+                <div class="item">
+                  <sl-select label="Post Font" id="font-post-select" hoist>
+                    <sl-option value="roboto">
+                      Roboto
+                    </sl-option>
+                    <sl-option value="noto">
+                      Noto Sans
+                    </sl-option>
+                    <sl-option value="open-sans">
+                      Open Sans
+                    </sl-option>
+                    <sl-option value="inter">
+                      Inter
+                    </sl-option>
+                    <sl-option value="merriweather">
+                      Merriweather
+                    </sl-option>
+                    <sl-option value="playfair-display">
+                      Playfair Display
+                    </sl-option>
+                    <sl-option value="tinos">
+                      Tinos
+                    </sl-option>
+                    <sl-option value="lora">
+                      Lora
+                    </sl-option>
+                    <sl-option value="bree-serif">
+                      Bree Serif
+                    </sl-option>
+                    <sl-option value="source-serif-4">
+                      Source Serif 4
+                    </sl-option>
+                  </sl-select>
+                </div>
+                <div class="item">
+                  <sl-select label="Styles" id="fonts-styles-select" hoist>
+                    <sl-option value="standard">
+                      Standard
+                    </sl-option>
+                    <sl-option value="colored">
+                      Colored
+                    </sl-option>
+                  </sl-select>
+                </div>
+              </sl-details>
+            </div>
+            <div class="item">
+              <sl-details summary="Texture">
+                <span slot="expand-icon" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="24" height="24" 
+                    viewBox="0 0 24 24" 
+                    fill="none" stroke="currentColor" 
+                    stroke-width="2" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    class="lucide lucide-chevron-down-icon lucide-chevron-down icon"
+                    >
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </span>
+                <span slot="collapse-icon" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="24" height="24" 
+                    viewBox="0 0 24 24" 
+                    fill="none" stroke="currentColor" 
+                    stroke-width="2" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    class="lucide lucide-chevron-down-icon lucide-chevron-down icon"
+                    >
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </span>
+                <div class="item">
+                  <sl-select label="Top Section Texture" id="top-section-texture-select" hoist>
+                    <sl-option value="surface-1">
+                      Surface 1
+                    </sl-option>
+                    <sl-option value="none">
+                      None
+                    </sl-option>
+                  </sl-select>
+                </div>
+              </sl-details>
+            </div>
+            <div class="item">
+              <sl-details summary="Layout">
+                <span slot="expand-icon" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="24" height="24" 
+                    viewBox="0 0 24 24" 
+                    fill="none" stroke="currentColor" 
+                    stroke-width="2" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    class="lucide lucide-chevron-down-icon lucide-chevron-down icon"
+                    >
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </span>
+                <span slot="collapse-icon" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="24" height="24" 
+                    viewBox="0 0 24 24" 
+                    fill="none" stroke="currentColor" 
+                    stroke-width="2" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    class="lucide lucide-chevron-down-icon lucide-chevron-down icon"
+                    >
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </span>
+                <div class="item">
+                  <sl-switch id="full-screen-width-checkbox">Full-Screen Width</sl-switch>
+                </div>
+                <div class="item">
+                  <sl-switch id="stacked-checkbox">Stacked</sl-switch>
+                </div>
+              </sl-details>
+            </div>
+            <div class="item">
+              <sl-details summary="Borders">
+                <span slot="expand-icon" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="24" height="24" 
+                    viewBox="0 0 24 24" 
+                    fill="none" stroke="currentColor" 
+                    stroke-width="2" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    class="lucide lucide-chevron-down-icon lucide-chevron-down icon"
+                    >
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </span>
+                <span slot="collapse-icon" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="24" height="24" 
+                    viewBox="0 0 24 24" 
+                    fill="none" stroke="currentColor" 
+                    stroke-width="2" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    class="lucide lucide-chevron-down-icon lucide-chevron-down icon"
+                    >
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </span>
+                <!-- TODO(bp+n): options
+                  Groove, Ridge, Flat
+                  Split, Seam, Seamless
+                  -->
+                <div class="item">
+                  <sl-select
+                    id="section-divider-select"
+                    label="Section Divider"
+                    hoist 
+                  >
+                    <sl-option value="split">
+                      Split
+                    </sl-option>
+                    <sl-option value="ridge">
+                      Ridge
+                    </sl-option>
+                    <!-- TODO(bp+n): Continuous -->
+                    <sl-option value="none">
+                      None
+                    </sl-option>
+                  </sl-select>
+                </div>
+                <div class="item">
+                  <sl-select
+                    id="border-width-select"
+                    label="Border Width"
+                    hoist 
+                  >
+                    <sl-option value="thin">
+                      Thin
+                    </sl-option>
+                    <sl-option value="medium">
+                      Medium
+                    </sl-option>
+                    <sl-option value="thick">
+                      Thick
+                    </sl-option>
+                  </sl-select>
+                </div>
+                <div class="item">
+                  <sl-switch id="colored-borders-checkbox">Colored Borders</sl-switch>
+                </div>
+                <div class="item">
+                  <sl-switch id="outline-mode-checkbox">Outline Mode</sl-switch>
+                </div>
+              </sl-details>
+            </div>
+            <div class="item">
+              <sl-details summary="Controls">
+                <span slot="expand-icon" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="24" height="24" 
+                    viewBox="0 0 24 24" 
+                    fill="none" stroke="currentColor" 
+                    stroke-width="2" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    class="lucide lucide-chevron-down-icon lucide-chevron-down icon"
+                    >
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </span>
+                <span slot="collapse-icon" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="24" height="24" 
+                    viewBox="0 0 24 24" 
+                    fill="none" stroke="currentColor" 
+                    stroke-width="2" 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    class="lucide lucide-chevron-down-icon lucide-chevron-down icon"
+                    >
+                    <path d="m6 9 6 6 6-6"/>
+                  </svg>
+                </span>
+                <div class="item">
+                  <sl-select
+                    id="post-actions-alignment-select"
+                    label="Post Actions Alignment"
+                    hoist 
+                  >
+                    <sl-option value="start">
+                      Start
+                    </sl-option>
+                    <sl-option value="space-around">
+                      Space Around
+                    </sl-option>
+                    <sl-option value="space-evenly">
+                      Space Evenly
+                    </sl-option>
+                  </sl-select>
+                </div>
+              </sl-details>
+            </div>
+          </sl-details>
+        </div>
+        <div class="item end-item">
+          <sl-details summary="Components">
+            <span slot="expand-icon" aria-hidden="true">
+              <svg
+                xmlns="http://www.w3.org/2000/svg" 
+                width="24" height="24" 
+                viewBox="0 0 24 24" 
+                fill="none" stroke="currentColor" 
+                stroke-width="2" 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                class="lucide lucide-chevron-down-icon lucide-chevron-down icon"
+                >
+                <path d="m6 9 6 6 6-6"/>
+              </svg>
+            </span>
+            <span slot="collapse-icon" aria-hidden="true">
+              <svg
+                xmlns="http://www.w3.org/2000/svg" 
+                width="24" height="24" 
+                viewBox="0 0 24 24" 
+                fill="none" stroke="currentColor" 
+                stroke-width="2" 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                class="lucide lucide-chevron-down-icon lucide-chevron-down icon"
+                >
+                <path d="m6 9 6 6 6-6"/>
+              </svg>
+            </span>
+            <div class="item">
+              <sl-checkbox id="search-checkbox">Search</sl-checkbox>
+            </div>
+            <div class="item">
+              <sl-checkbox id="filter-checkbox">Filter</sl-checkbox>
+            </div>
+          </sl-details>
+        </div>
+      </div>
+    </section>
+
+    <!-- HeaderSection/Intro -->
+    <section class="body-section header-section">
+      <header class="heading2">
+        <h2>Intro</h2>
+      </header>
+      <div class="section-body content-subsection">
+        <!-- NOTE FlagEmodjiSvg_BaselineAdjustment
+              10px / 64px = -0.156em;
+              9px / 64px = -0.140625em;
+              The bottom paddings is from GPT's response.
+              -->
+        <p>
+          <img
+            class="emoji-flag"
+            src="blog/assets/icons/flag-for-ukraine-emojione-v1.svg"
+            alt="🇺🇦"
+            style="vertical-align: -0.156em;">
+          Блог про розробку програмного забезпечення, графічний дизайн та інше
+        </p>
+        <p>
+          <img
+            class="emoji-flag"
+            src="blog/assets/icons/flag-for-united-states-emojione-v1.svg"
+            alt="🇺🇸"
+            style="vertical-align: -0.140625em;">
+          Blog about software development, graphic design and more
+        </p>
+      </div>
+    </section>
+
+    <!-- HeaderSection/Links -->
+    <nav class="body-section header-section">
+      <header class="heading2">
+        <h2>Links</h2>
+      </header>
+      <div class="section-body">
+        <ul>
+          <li><a href="https://www.facebook.com/profile.php?id=100079024623149">Facebook</a></li>
+          <li><a href="https://bsky.app/profile/oleksa5.bsky.social">Bluesky</a></li>
+          <li><a href="https://techhub.social/@oleksa5">Mastodon</a></li>
+        </ul>
+      </div>
+    </nav>
+
+     <!-- HeaderSection/Index -->
+     <nav class="body-section header-section">
+      <header class="heading2">
+        <h2>Index</h2>
+      </header>
+      <div class="section-body">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="pages/posts?name=html-templates-2025-04-14">HTML Templates</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HeaderSection/PostsHeader -->
+    <header class="
+      body-section
+      header-section
+      group-header-section
+      heading2
+    ">
+      <h2>Posts</h2>
+      <span id="post-counter">0 of 0</span>
+      <div class="spacer"></div>
+    </header>
+    <div class="section-body">
+      <section id="timeline">
+        <!-- BodySectionPlacement/Posts -->
+      </section>
+      <div id="scroll-sentinel"></div>
+    </div>
+  </main>
+
+  <!-- BodySection/Footer -->
+  <footer class="body-section footer-section">
+    <p>
+      Built with <a href="https://github.com/Oleksa5/Gleam">Gleam</a>
+    </p>
+  </footer>
+</body>
+</html>
